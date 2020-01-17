@@ -69,6 +69,10 @@ Made using Figma (using only mobile view as this will be the most popular way to
 ![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/color-palette.png "Color palette")
 
 # Trello
+We used Trello to map out what was needed for the application. We broke down the features/functionality and assigned them to either 'MVP' or 'Nice to have'. These were further broken down the 'Guest' or 'Admin'. 
+
+Trello was further used to assign the documentation tasks to team members. We chose which of the items to compete then moved them from 'To Do' then 'In Progress' while we completed them and lastly to 'Complete' when they were finished. We have a group GitHub were we each have a copy on our local and we would push to a branch of the forked repo and then create a pull request to merge with the master.
+
 ![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2014-22-30.png "trello 1")
 ![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2014-23-21.png "Trello 2")
 ![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2014-24-10.png "trello 3")
