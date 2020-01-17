@@ -67,3 +67,10 @@ Made using Figma (using only mobile view as this will be the most popular way to
 ![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2013-31-43.png "Wireframe 4")
 ![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2013-31-43.png "Wireframe 5")
 ![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/color-palette.png "Color palette")
+
+# Trello
+![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2014-22-30.png "trello 1")
+![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2014-23-21.png "Trello 2")
+![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2014-24-10.png "trello 3")
+![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2014-24-57.png "trello 4")
+
