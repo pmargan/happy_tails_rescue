@@ -43,13 +43,27 @@ Admin can (when signed in and authorised through email and password)
 The main target audience for this web application would be people wishing to adopt a dog or cat, foster an animal or volunteer with the organisation. 
 
 # Tech stack
-HTML/CSS for visual styling the user interface // through style components?
-Heroku for hosting the server application
-// host for client side?
-NodeJS as Javascript runtime environment
-ExpressJS open source framework for creating the server application on NodeJS
-ReactJS framework for creating the client side application that handles page routing, page rendering, searching
-MongoDB and MongoAtlas for the animals database hosted on the cloud
+* HTML/CSS for visual styling the user interface through style components/emotion
+* Heroku for hosting the server application
+* Netlify hosting for client side
+* NodeJS as Javascript runtime environment
+* ExpressJS open source framework for creating the server application on NodeJS
+* ReactJS framework for creating the client side application that handles page routing, page rendering, searching
+* MongoDB and MongoAtlas for the animals database hosted on the cloud
 
+# Wireframes
+Made using Balsamiq for desktop, tablet and mobile.
 
+![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/landing-page.png "Landing Page")
+![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/programs.png "Programs Page")
+![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/adopt-main-page.png "All Adoptions Page")
+![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/adopt%20cat_dog.png "Adopt Cat/Dog Page")
 
+Made using Figma (using only mobile view as this will be the most popular way to view) to give the overall flow and design of the website including color palette. 
+
+![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2013-29-37.png "Wireframe 1")
+![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2013-30-32.png "Wireframe 2")
+![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2013-31-25.png "Wireframe 3")
+![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2013-31-43.png "Wireframe 4")
+![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2013-31-43.png "Wireframe 5")
+![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/color-palette.png "Color palette")
