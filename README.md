@@ -78,3 +78,5 @@ Trello was further used to assign the documentation tasks to team members. We ch
 ![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2014-24-10.png "trello 3")
 ![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2014-24-57.png "trello 4")
 
+# Application Architecture Diagram
+![alt text](https://github.com/NicolasJJensen/happy_tails_rescue/blob/master/docs/HappyTailsAAD.pdf "AAD")
