@@ -80,3 +80,5 @@ Trello was further used to assign the documentation tasks to team members. We ch
 
 # Application Architecture Diagram
 ![alt text](https://github.com/NicolasJJensen/happy_tails_rescue/blob/master/docs/HappyTailsAAD.pdf "AAD")
+
+### Project Timeline Part 1(documentation)
