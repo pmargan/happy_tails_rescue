@@ -80,12 +80,12 @@ Trello was further used to assign the documentation tasks to team members. We ch
 ![completed trello](./docs/Screenshot-completed-trello.png)
 
 # Application Architecture Diagram
-
 ![AAD Diagram](./docs/HappyTailsAAD.png)
-
 
 ### Project Timeline Part 1(documentation)
 ![Part1 Timeline](./docs/Part1-timeline.png)
-
 ![Part2 Timeline](./docs/part2-timeline.png)
 ![timeline overview](./docs/timeline-overview.png)
+
+# Data Flow Diagram
+![alt text](https://github.com/NicolasJJensen/happy_tails_rescue/blob/master/docs/Data%20Flow%20Diagram.png "Data Flow Diagram")
