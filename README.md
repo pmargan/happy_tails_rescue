@@ -54,31 +54,38 @@ The main target audience for this web application would be people wishing to ado
 # Wireframes
 Made using Balsamiq for desktop, tablet and mobile.
 
-![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/landing-page.png "Landing Page")
-![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/programs.png "Programs Page")
-![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/adopt-main-page.png "All Adoptions Page")
-![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/adopt%20cat_dog.png "Adopt Cat/Dog Page")
+![alt text](./docs/landing-page.png "Landing Page")
+![alt text](./docs/programs.png "Programs Page")
+![alt text](./docs/adopt-main-page.png "All Adoptions Page")
+![alt text](./docs/adopt%20cat_dog.png "Adopt Cat/Dog Page")
 
 Made using Figma (using only mobile view as this will be the most popular way to view) to give the overall flow and design of the website including color palette. 
 
-![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2013-29-37.png "Wireframe 1")
-![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2013-30-32.png "Wireframe 2")
-![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2013-31-25.png "Wireframe 3")
-![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2013-31-43.png "Wireframe 4")
-![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2013-31-43.png "Wireframe 5")
-![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/color-palette.png "Color palette")
+![alt text](./docs/Screenshot%20from%202020-01-17%2013-29-37.png "Wireframe 1")
+![alt text](./docs/Screenshot%20from%202020-01-17%2013-30-32.png "Wireframe 2")
+![alt text](./docs/Screenshot%20from%202020-01-17%2013-31-25.png "Wireframe 3")
+![alt text](./docs/Screenshot%20from%202020-01-17%2013-31-43.png "Wireframe 4")
+![alt text](./docs/Screenshot%20from%202020-01-17%2013-31-43.png "Wireframe 5")
+![alt text](./docs/color-palette.png "Color palette")
 
 # Trello
 We used Trello to map out what was needed for the application. We broke down the features/functionality and assigned them to either 'MVP' or 'Nice to have'. These were further broken down the 'Guest' or 'Admin'. 
 
 Trello was further used to assign the documentation tasks to team members. We chose which of the items to compete then moved them from 'To Do' then 'In Progress' while we completed them and lastly to 'Complete' when they were finished. We have a group GitHub were we each have a copy on our local and we would push to a branch of the forked repo and then create a pull request to merge with the master.
 
-![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2014-22-30.png "trello 1")
-![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2014-23-21.png "Trello 2")
-![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2014-24-10.png "trello 3")
-![alt text](https://github.com/reneenilsen/happy_tails_rescue/blob/renee-happy-tails/docs/Screenshot%20from%202020-01-17%2014-24-57.png "trello 4")
+![alt text](./docs/Screenshot%20from%202020-01-17%2014-22-30.png "trello 1")
+![alt text](./docs/Screenshot%20from%202020-01-17%2014-23-21.png "Trello 2")
+![alt text](./docs/Screenshot%20from%202020-01-17%2014-24-10.png "trello 3")
+![alt text](./docs/Screenshot%20from%202020-01-17%2014-24-57.png "trello 4")
+![completed trello](./docs/Screenshot-completed-trello.png)
 
 # Application Architecture Diagram
-![alt text](https://github.com/NicolasJJensen/happy_tails_rescue/blob/master/docs/HappyTailsAAD.pdf "AAD")
+
+![AAD Diagram](./docs/HappyTailsAAD.png)
+
 
 ### Project Timeline Part 1(documentation)
+![Part1 Timeline](./docs/Part1-timeline.png)
+
+![Part2 Timeline](./docs/part2-timeline.png)
+![timeline overview](./docs/timeline-overview.png)
