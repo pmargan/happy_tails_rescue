@@ -1,14 +1,18 @@
+const mongoose = require('mongoose')
+
+const Schema = mongoose.Schema
+
 const AnimalSchema = new Schema({
 
-  user_id: {
+  userId: {
     type: String,
     required: true
   },
-  animal_photo: {
+  animalPhoto: {
     type: String,
     required: true
   },
-  animal_type: {
+  animalType: {
     type: String,
     required: true
   },
@@ -30,15 +34,15 @@ const AnimalSchema = new Schema({
     type: Number,
     required: true
   },
-  primary_breed: {
+  primaryBreed: {
     type: String,
     required: true
   },
-  secondary_breed: {
+  secondaryBreed: {
     type: String,
     required: false
   },
-  cross_breed: {
+  crossBreed: {
     type: Boolean,
     required: false
   },
@@ -46,7 +50,7 @@ const AnimalSchema = new Schema({
     type: String,
     required: true
   },
-  coat_type: {
+  coatType: {
     type: String,
     required: false
   },
@@ -58,11 +62,11 @@ const AnimalSchema = new Schema({
     type: String,
     required: true
   },
-  friendly_with: {
+  friendlyWith: {
     type: Text,
     required: true
   },
-  would_suit: {
+  wouldSuit: {
     type: Text,
     required: true
   },
@@ -78,7 +82,7 @@ const AnimalSchema = new Schema({
     type: Text,
     required: true
   },
-  house_trained: {
+  houseTrained: {
     type: Boolean,
     required: true
   },
@@ -114,8 +118,12 @@ const AnimalSchema = new Schema({
     type: Date,
     required: false
   },
-  extra_notes: {
+  extraNotes: {
     type: Text,
     required: false
   },
 })
+
+const AnimalModel = mongoose.model('Animal', AnimalSchema)
+
+module.exports = { AnimalSchema, AnimalModel }
