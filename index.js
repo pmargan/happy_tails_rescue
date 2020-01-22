@@ -2,8 +2,10 @@ const express = require("express")
 const router = express.Router()
 const AuthRoutes = require("./routes/auth_routes")
 const AnimalRoutes = require("./routes/animal_routes")
-const passport = require("passport")
+// const passport = require("passport")
 const port = process.env.PORT || 5000
+
+
 app = express()
 
 app.listen(port, () => console.log(`Listening on port ${port}`))
