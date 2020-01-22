@@ -83,7 +83,7 @@ const AnimalSchema = new Schema({
     required: true
   },
   adoptionFee: {
-    type: Integar,
+    type: Integer,
     required: true
   },
   bin: {
@@ -117,5 +117,7 @@ const AnimalSchema = new Schema({
   extra_notes: {
     type: Text,
     required: false
-  },
+  }
 })
+
+module.exports(AnimalSchema)
