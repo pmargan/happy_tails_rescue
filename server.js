@@ -1,11 +1,24 @@
-const express = require('express');
-const app = express();
-const port = process.env.PORT || 5000;
+const mongoose = require('mongoose')
+require('dotenv').config()
+const express = require('express')
 
-// console.log that your server is up and running
-app.listen(port, () => console.log(`Listening on port ${port}`));
+const API_PORT = 3001
+const app = express()
+const router = express.Router()
 
-// create a GET route
-app.get('/express_backend', (req, res) => {
-  res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
-});
+// this is our MongoDB database con string
+
+const dbRoute = 'mongodb+srv://pmargan:psdstrk1@cluster0-9orff.mongodb.net/test?retryWrites=true&w=majority'
+
+// connects our back end code with the database
+mongoose.connect(dbRoute, { useNewUrlParser: true })
+
+const db = mongoose.connection
+
+db.once('open', () => console.log('connected to the database'))
+
+// checks if connection with the database is successful
+db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+
+// launch our backend into a port
+app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`))
