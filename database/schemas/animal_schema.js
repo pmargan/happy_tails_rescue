@@ -1,14 +1,18 @@
+const mongoose = require('mongoose')
+
+const Schema = mongoose.Schema
+
 const AnimalSchema = new Schema({
 
-  user_id: {
+  userId: {
     type: String,
     required: true
   },
-  animal_photo: {
+  animalPhoto: {
     type: String,
     required: true
   },
-  animal_type: {
+  animalType: {
     type: String,
     required: true
   },
@@ -30,15 +34,15 @@ const AnimalSchema = new Schema({
     type: Number,
     required: true
   },
-  primary_breed: {
+  primaryBreed: {
     type: String,
     required: true
   },
-  secondary_breed: {
+  secondaryBreed: {
     type: String,
     required: false
   },
-  cross_breed: {
+  crossBreed: {
     type: Boolean,
     required: false
   },
@@ -46,7 +50,7 @@ const AnimalSchema = new Schema({
     type: String,
     required: true
   },
-  coat_type: {
+  coatType: {
     type: String,
     required: false
   },
@@ -58,12 +62,12 @@ const AnimalSchema = new Schema({
     type: String,
     required: true
   },
-  friendly_with: {
-    type: Text,
+  friendlyWith: {
+    type: String,
     required: true
   },
-  would_suit: {
-    type: Text,
+  wouldSuit: {
+    type: String,
     required: true
   },
   weight: {
@@ -71,19 +75,19 @@ const AnimalSchema = new Schema({
     required: true
   },
   behaviorNotes: {
-    type: Text,
+    type: String,
     required: true
   },
   medicalNotes: {
-    type: Text,
+    type: String,
     required: true
   },
-  house_trained: {
+  houseTrained: {
     type: Boolean,
     required: true
   },
   adoptionFee: {
-    type: Integer,
+    type: Number,
     required: true
   },
   bin: {
@@ -107,17 +111,19 @@ const AnimalSchema = new Schema({
     required: true
   },
   description: {
-    type: Text,
+    type: String,
     required: true
   },
   dob: {
     type: Date,
     required: false
   },
-  extra_notes: {
-    type: Text,
+  extraNotes: {
+    type: String,
     required: false
   }
 })
 
-module.exports(AnimalSchema)
+const AnimalModel = mongoose.model('Animal', AnimalSchema)
+
+module.exports = { AnimalSchema, AnimalModel }
