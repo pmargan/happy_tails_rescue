@@ -72,6 +72,10 @@ const DynamicText = new Schema({
       type: String,
       required: true
     },
+    helpUs: {
+      type: String,
+      required: true
+    },
     donateSnippet: {
       type: String,
       required: true

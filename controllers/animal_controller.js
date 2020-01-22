@@ -11,11 +11,10 @@ async function create(req, res, next) {
 }
 
 function index(req, res) {
-    return res.json(req.animal)
+    res.json(req.animal)
 }
 
 module.exports = {
     create,
-    index,
-    
+    index
 }
