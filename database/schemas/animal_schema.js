@@ -18,6 +18,7 @@ const AnimalSchema = new Schema({
   },
   gender: {
     type: String,
+    enum: ['Male', 'Female'],
     required: true
   },
   microchip: {
@@ -52,10 +53,12 @@ const AnimalSchema = new Schema({
   },
   coatType: {
     type: String,
+    enum: ['Short', 'Medium', 'Long'],
     required: false
   },
   size: {
     type: String,
+    enum:['Toy', 'Small', 'Medium', 'Large', 'Giant'],
     required: true
   },
   location: {
@@ -63,11 +66,11 @@ const AnimalSchema = new Schema({
     required: true
   },
   friendlyWith: {
-    type: Text,
+    type: String,
     required: true
   },
   wouldSuit: {
-    type: Text,
+    type: String,
     required: true
   },
   weight: {
@@ -75,11 +78,11 @@ const AnimalSchema = new Schema({
     required: true
   },
   behaviorNotes: {
-    type: Text,
+    type: String,
     required: true
   },
   medicalNotes: {
-    type: Text,
+    type: String,
     required: true
   },
   houseTrained: {
@@ -87,7 +90,7 @@ const AnimalSchema = new Schema({
     required: true
   },
   adoptionFee: {
-    type: Integar,
+    type: Number,
     required: true
   },
   bin: {
@@ -111,7 +114,7 @@ const AnimalSchema = new Schema({
     required: true
   },
   description: {
-    type: Text,
+    type: String,
     required: true
   },
   dob: {
@@ -119,7 +122,7 @@ const AnimalSchema = new Schema({
     required: false
   },
   extraNotes: {
-    type: Text,
+    type: String,
     required: false
   },
 })
