@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/NicolasJJensen/happy_tails_rescue#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "passport-local-mongoose": "^6.0.1"
   }
 }
