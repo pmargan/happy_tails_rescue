@@ -1,72 +1,85 @@
-const animalSchema = [
+const { AnimalModel } = require('./schemas/animal_schema')
+const { DynamicTextModel } = require ('./schemas/dynamicText_schema')
+console.log(AnimalModel)
+console.log(DynamicTextModel)
+
+
+
+const mockData = [
     {
-    user_id: "",
-    animal_photo: "http://lorempixel.com/200/200",
-    animal_type: "Dog",
+    userId: "",
+    animalPhoto: "http://lorempixel.com/200/200",
+    animalType: "Dog",
+    gender: "Male",
     microchip: "abc123456789",
     name: "Budweiser",
     age: 1.5,
-    gender: "Male",
-    primary_breed: "Corgi",
-    secondary_breed: "",
-    cross_breed: true,
+    primaryBreed: "Corgi",
+    secondaryBreed: "",
+    crossBreed: true,
     color: "Brown",
-    coat_type: "Short",
+    coatType: "Short",
     size: "Medium",
     location: "Tarampa, West Brisbane",
-    friendly_with: "Dogs (MUST be a calm well balanced dog) and cats (can sometimes get over excited and chase). Kids not recommended.",
-    would_suit: "Couple, singles, retirees, families",
+    friendlyWith: "Dogs (MUST be a calm well balanced dog) and cats (can sometimes get over excited and chase). Kids not recommended.",
+    wouldSuit: "Couple, singles, retirees, families",
     weight: 8,
-    behavior_notes: "Needs a confident dog owner as he can be snappy",
-    medical_notes: "",
-    house_trained: true,
-    adoption_fee: 450,
+    behaviorNotes: "Needs a confident dog owner as he can be snappy",
+    medicalNotes: "",
+    houseTrained: true,
+    adoptionFee: 450,
     bin: "BIN0000561500753",
     desexed: true,
     vaccinated: true,
     wormed: true,
-    heartworm_treated: true,
+    heartwormTreated: true,
     dob: 21/01/2019,
-    extra_notes: "",
+    extraNotes: "",
     description: "Budweiser, or Buddy as he is known always greets you with great excitement when you get home"
     },
 
     {
-    user_id: "",
-    animal_photo: "http://lorempixel.com/200/200",
-    animal_type: "Cat",
+    userId: "",
+    animalPhoto: "http://lorempixel.com/200/200",
+    animalType: "Cat",
     microchip: "abc987654321",
     name: "Abbey",
     age: 9,
     gender: "Female",
-    primary_breed: "Bengal",
-    secondary_breed: "",
-    cross_breed: false,
+    primaryBreed: "Bengal",
+    secondaryBreed: "",
+    crossBreed: false,
     color: "Brown spotted",
-    coat_type: "Short",
+    coatType: "Short",
     size: "Small",
     location: "Wakerley, Brisbane",
-    friendly_with: "None, must be only cat",
-    would_suit: "Couple, singles, retirees, families",
+    friendlyWith: "None, must be only cat",
+    wouldSuit: "Couple, singles, retirees, families",
     weight: 4,
-    behavior_notes: "Needs an experienced owner",
-    medical_notes: "Sensitive skin",
-    house_trained: true,
-    adoption_fee: 250,
+    behaviorNotes: "Needs an experienced owner",
+    medicalNotes: "Sensitive skin",
+    houseTrained: true,
+    adoptionFee: 250,
     bin: "BIN0000561500753",
     desexed: true,
     vaccinated: true,
     wormed: true,
-    heartworm_treated: true,
+    heartwormTreated: true,
     dob: 21/01/2010,
-    extra_notes: "",
+    extraNotes: "",
     description: "Brown spotted Bangel cat"
     }
 ]
 
-AnimalModel.createOne({...AnimalSchema})
 
-const dynamicText = {
+AnimalModel.insertMany(mockData, (err, docs) => {
+    if (err) {
+        console.log(err)
+        console.log('there has been an error seeding the database')
+    }
+})
+
+const dynamicTextStarter = {
     welcomePage: `Welcome to Happy Tails Animal Rescue Inc.
  
     We are a not-for-profit, no-kill animal rescue charity based in South-East QLD; however, dedicated to helping animals in need Australia-wide! Happy Tails is committed to taking in dogs, cats, kittens and puppies that find themselves in need; and doing all we can to re-write their tale into one with a happily ever after.
@@ -218,4 +231,9 @@ const dynamicText = {
     Our media coordinator will look to respond to all media requests within 48 hours.`,
 }
 
-DynamicTextModel.createOne({...dynamicText})
+DynamicTextModel.insertMany(dynamicTextStarter, (err, docs) => {
+    if (err) {
+        console.log(err)
+        console.log('there has been an error seeding the database')
+    }
+})
