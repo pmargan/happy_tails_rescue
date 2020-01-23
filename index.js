@@ -5,7 +5,6 @@ require('dotenv').config()
 const mongoose = require('mongoose')
 const API_PORT = process.env.PORT || 5000
 
-
 // this is our MongoDB database con string
 
 const dbRoute = 'mongodb+srv://pmargan:psdstrk1@cluster0-9orff.mongodb.net/test?retryWrites=true&w=majority'
@@ -14,6 +13,7 @@ const dbRoute = 'mongodb+srv://pmargan:psdstrk1@cluster0-9orff.mongodb.net/test?
 mongoose.connect(dbRoute, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const db = mongoose.connection
+const animals = require("./routes/animal_routes")
 
 db.once('open', () => {
     require('./database/seeds')
@@ -24,8 +24,10 @@ db.once('open', () => {
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 app.get("/", (req, res) => res.send("Welcome"))
-app.use("/auth", require("./routes/auth_routes"))
-app.use("/animals", require("./routes/animal_routes"))
+// app.use("/auth", require("./routes/auth_routes"))
+app.use("/all-animals", animals, (req, res) => res.send("All animals available for adoption"))
+app.use("/cats-kittens", animals, (req, res) => res.send("All cats and kittens available for adoption"))
+app.use("/dogs-puppies", animals, (req, res) => res.send("All dogs and puppies available for adoption"))
 
-// launch our backend into a port
-app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`))
+
+,app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`))
