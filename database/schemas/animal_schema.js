@@ -6,7 +6,7 @@ const AnimalSchema = new Schema({
 
   userId: {
     type: String,
-    required: true
+    // required: true
   },
   animalPhoto: {
     type: String,
@@ -84,7 +84,7 @@ const AnimalSchema = new Schema({
   },
   medicalNotes: {
     type: String,
-    required: true
+    required: false
   },
   houseTrained: {
     type: Boolean,
