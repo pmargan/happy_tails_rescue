@@ -4,10 +4,6 @@ const Schema = mongoose.Schema
 
 const AnimalSchema = new Schema({
 
-  userId: {
-    type: String,
-    // required: true
-  },
   animalPhoto: {
     type: String,
     required: true

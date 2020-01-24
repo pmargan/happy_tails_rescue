@@ -7,7 +7,6 @@ console.log(DynamicTextModel)
 
 const mockData = [
     {
-    userId: "",
     animalPhoto: "http://lorempixel.com/200/200",
     animalType: "Dog",
     gender: "Male",
@@ -39,7 +38,6 @@ const mockData = [
     },
 
     {
-    userId: "",
     animalPhoto: "http://lorempixel.com/200/200",
     animalType: "Cat",
     microchip: "abc987654321",
