@@ -1,17 +1,38 @@
-const express = require("express")
-const router = express.Router()
-const AuthRoutes = require("./routes/auth_routes")
-const AnimalRoutes = require("./routes/animal_routes")
-// const passport = require("passport")
-const port = process.env.PORT || 5000
+const express = require('express')
+const app = express()
+require('dotenv').config()
+const mongoose = require('mongoose')
+const API_PORT = process.env.PORT || 5000
 
+// this is our MongoDB database con string
 
-app = express()
+const dbRoute = 'mongodb+srv://pmargan:psdstrk1@cluster0-9orff.mongodb.net/test?retryWrites=true&w=majority'
 
-app.listen(port, () => console.log(`Listening on port ${port}`))
+// connects our back end code with the database
+mongoose.connect(dbRoute, { useNewUrlParser: true, useUnifiedTopology: true })
 
-app.get("/", (req, res) => res.send("Welcome"))
-app.use("/auth", AuthRoutes)
-app.use("/animals", AnimalRoutes)
+const db = mongoose.connection
+const animals = require("./routes/animal_routes")
+const auth = require("./routes/auth_routes")
 
-module.exports = router
+db.once('open', () => {
+    require('./database/seeds')
+    console.log('connected to the database')
+})
+
+// checks if connection with the database is successful
+db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+
+app.use('/auth', auth) 
+app.use('/animals', animals),
+
+// testing routes
+// app.get("/", (req, res) => res.send("Welcome"))
+// app.use("/all-animals", animals, (req, res) => res.send("All animals available for adoption"))
+// app.use("/cats-kittens", animals, (req, res) => res.send("All cats and kittens available for adoption"))
+// app.use("/dogs-puppies", animals, (req, res) => res.send("All dogs and puppies available for adoption"))
+// app.use("/profile/:id", animals, (req, res) => res.send("View profile"))
+// app.use("/update-animal-profile", animals, (req, res) => res.send("Edit profile"))
+// app.use("/delete-animal-profile", animals, (req, res) => res.send("Delete profile"))
+
+app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`))

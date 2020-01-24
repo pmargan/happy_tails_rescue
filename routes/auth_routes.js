@@ -1,13 +1,13 @@
-const express = require("express");
-const router = express.Router();
-const { celebrate, Joi } = require("celebrate");
-const AuthController = require("./../controllers/auth_controller");
+const express = require("express")
+const router = express.Router()
+const { celebrate, Joi } = require("celebrate")
+const AuthController = require("./../controllers/auth_controller")
 
 router.post("/register", celebrate({
     body: {
-        email: Joi.string().email().required(),
+        username: Joi.string().username().required(),
         password: Joi.string().required()
     }
-}), AuthController.register);
+}), AuthController.register)
 
-module.exports = router;
+module.exports = router

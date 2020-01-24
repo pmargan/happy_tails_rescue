@@ -69,7 +69,14 @@ const animals = [
 
 AnimalModel.create(animals)
 
-const dynamicText = {
+AnimalModel.insertMany(mockData, (err, docs) => {
+    if (err) {
+        console.log(err)
+        console.log('there has been an error seeding the database')
+    }
+})
+
+const dynamicTextStarter = {
     welcomePage: `Welcome to Happy Tails Animal Rescue Inc.
  
     We are a not-for-profit, no-kill animal rescue charity based in South-East QLD; however, dedicated to helping animals in need Australia-wide! Happy Tails is committed to taking in dogs, cats, kittens and puppies that find themselves in need; and doing all we can to re-write their tale into one with a happily ever after.

@@ -4,10 +4,6 @@ const Schema = mongoose.Schema
 
 const AnimalSchema = new Schema({
 
-  userId: {
-    type: String,
-    required: true
-  },
   animalPhoto: {
     type: String,
     required: true
@@ -84,7 +80,7 @@ const AnimalSchema = new Schema({
   },
   medicalNotes: {
     type: String,
-    required: true
+    required: false
   },
   houseTrained: {
     type: Boolean,

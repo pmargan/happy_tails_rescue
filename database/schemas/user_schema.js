@@ -1,11 +1,9 @@
-const { Schema } = require("mongoose")
-const { AnimalSchema } = require("./animal_schema")
-const passportLocalMongoose = require('passport-local-mongoose')
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const passportLocalMongoose = require('passport-local-mongoose');
 
-const UserSchema = new Schema({
-    animals: [AnimalSchema]
-})
+const User = new Schema({})
 
-UserSchema.plugin(passportLocalMongoose, { usernameField: 'email' })
+User.plugin(passportLocalMongoose)
 
 module.exports = UserSchema

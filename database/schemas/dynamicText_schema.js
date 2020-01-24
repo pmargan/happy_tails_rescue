@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const DynamicText = new Schema({
+const DynamicTextSchema = new Schema({
 
     welcomePage: {
       type: String,
@@ -72,6 +72,10 @@ const DynamicText = new Schema({
       type: String,
       required: true
     },
+    helpUs: {
+      type: String,
+      required: true
+    },
     donateSnippet: {
       type: String,
       required: true
@@ -110,6 +114,6 @@ const DynamicText = new Schema({
     },
   })
   
-  const DynamicTextModel = mongoose.model('DynamicText', DynamicText)
+  const DynamicTextModel = mongoose.model('DynamicText', DynamicTextSchema)
   
-  module.exports = { DynamicText, DynamicTextModel }
+  module.exports = { DynamicTextSchema, DynamicTextModel }
