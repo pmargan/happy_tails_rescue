@@ -79,6 +79,7 @@ router.post('/register', (req, res) => {
         extraNotes: req.body.extraNotes
     })
     newAnimal.save()
+})
 
 router.post('/update-animal-profile', function(req, res) {
     AnimalModel.findOneAndUpdate(
