@@ -1,4 +1,3 @@
-// const passport = require("passport")
 const express = require('express')
 const app = express()
 require('dotenv').config()
@@ -14,6 +13,7 @@ mongoose.connect(dbRoute, { useNewUrlParser: true, useUnifiedTopology: true })
 
 const db = mongoose.connection
 const animals = require("./routes/animal_routes")
+const auth = require("./routes/auth_routes")
 
 db.once('open', () => {
     require('./database/seeds')
@@ -23,11 +23,16 @@ db.once('open', () => {
 // checks if connection with the database is successful
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-app.get("/", (req, res) => res.send("Welcome"))
-// app.use("/auth", require("./routes/auth_routes"))
-app.use("/all-animals", animals, (req, res) => res.send("All animals available for adoption"))
-app.use("/cats-kittens", animals, (req, res) => res.send("All cats and kittens available for adoption"))
-app.use("/dogs-puppies", animals, (req, res) => res.send("All dogs and puppies available for adoption"))
+app.use('/auth', auth) 
+app.use('/animals', animals),
 
+// testing routes
+// app.get("/", (req, res) => res.send("Welcome"))
+// app.use("/all-animals", animals, (req, res) => res.send("All animals available for adoption"))
+// app.use("/cats-kittens", animals, (req, res) => res.send("All cats and kittens available for adoption"))
+// app.use("/dogs-puppies", animals, (req, res) => res.send("All dogs and puppies available for adoption"))
+// app.use("/profile/:id", animals, (req, res) => res.send("View profile"))
+// app.use("/update-animal-profile", animals, (req, res) => res.send("Edit profile"))
+// app.use("/delete-animal-profile", animals, (req, res) => res.send("Delete profile"))
 
-,app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`))
+app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`))
