@@ -1,18 +1,15 @@
 const { AnimalModel } = require('./schemas/animal_schema')
-const { DynamicTextModel } = require ('./schemas/dynamicText_schema')
-console.log(AnimalModel)
-console.log(DynamicTextModel)
+const { DynamicTextModel } = require('./schemas/dynamicText_schema')
 
-
-
-const mockData = [
+const animals = [
     {
+    userId: "1234",
     animalPhoto: "http://lorempixel.com/200/200",
     animalType: "Dog",
-    gender: "Male",
     microchip: "abc123456789",
     name: "Budweiser",
     age: 1.5,
+    gender: "Male",
     primaryBreed: "Corgi",
     secondaryBreed: "",
     crossBreed: true,
@@ -24,7 +21,7 @@ const mockData = [
     wouldSuit: "Couple, singles, retirees, families",
     weight: 8,
     behaviorNotes: "Needs a confident dog owner as he can be snappy",
-    medicalNotes: "",
+    medicalNotes: "grain free",
     houseTrained: true,
     adoptionFee: 450,
     bin: "BIN0000561500753",
@@ -32,12 +29,13 @@ const mockData = [
     vaccinated: true,
     wormed: true,
     heartwormTreated: true,
-    dob: 21/01/2019,
+    dob: 21/1/2019,
     extraNotes: "",
     description: "Budweiser, or Buddy as he is known always greets you with great excitement when you get home"
     },
 
     {
+    userId: "1234",
     animalPhoto: "http://lorempixel.com/200/200",
     animalType: "Cat",
     microchip: "abc987654321",
@@ -63,12 +61,13 @@ const mockData = [
     vaccinated: true,
     wormed: true,
     heartwormTreated: true,
-    dob: 21/01/2010,
+    dob: 21/1/2010,
     extraNotes: "",
     description: "Brown spotted Bangel cat"
     }
 ]
 
+AnimalModel.create(animals)
 
 AnimalModel.insertMany(mockData, (err, docs) => {
     if (err) {
@@ -229,9 +228,4 @@ const dynamicTextStarter = {
     Our media coordinator will look to respond to all media requests within 48 hours.`,
 }
 
-DynamicTextModel.insertMany(dynamicTextStarter, (err, docs) => {
-    if (err) {
-        console.log(err)
-        console.log('there has been an error seeding the database')
-    }
-})
+DynamicTextModel.create(dynamicText)

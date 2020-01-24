@@ -121,7 +121,7 @@ const AnimalSchema = new Schema({
   extraNotes: {
     type: String,
     required: false
-  },
+  }
 })
 
 const AnimalModel = mongoose.model('Animal', AnimalSchema)

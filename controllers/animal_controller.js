@@ -1,18 +1,18 @@
 const { AnimalModel } = require("../database/schemas/animal_schema")
 
-// async function create(req, res, next) {
-//     req.animal.push(req.body);
-//     try {
-//         await req.user.save();
-//         res.json(req.animal);
-//     } catch( err ) {
-//         next(err);
-//     }
-// }
+async function create(req, res, next) {
+    req.animal.push(req.body);
+    try {
+        await req.animal.save();
+        res.json(req.animal);
+    } catch( err ) {
+        next(err);
+    }
+}
 
-// function index(req, res) {
-//     res.json(req.animal)
-// }
+async function index(req, res) {
+    return res.json(await AnimalModel.find())
+}
 
 // module.exports = {
 //     create,
