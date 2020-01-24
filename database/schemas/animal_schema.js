@@ -14,10 +14,12 @@ const AnimalSchema = new Schema({
   },
   animalType: {
     type: String,
+    enum: ['Dog', 'Puppy', 'Cat', 'Kitten'],
     required: true
   },
   gender: {
     type: String,
+    enum: ['Male', 'Female'],
     required: true
   },
   microchip: {
@@ -52,10 +54,12 @@ const AnimalSchema = new Schema({
   },
   coatType: {
     type: String,
+    enum: ['Short', 'Medium', 'Long'],
     required: false
   },
   size: {
     type: String,
+    enum:['Toy', 'Small', 'Medium', 'Large', 'Giant'],
     required: true
   },
   location: {

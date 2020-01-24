@@ -1,20 +1,11 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const { Schema } = require("mongoose")
+const { AnimalSchema } = require("./animal_schema")
 const passportLocalMongoose = require('passport-local-mongoose')
 
-const UserSchema = new mongoose.Schema({
-  role: {
-    type: String,
-    default: 'guest'
-  },
-  admin: {
-    type: Schema.Types.ObjectId,
-    ref: 'Admin',
-    required: true
-  }
+const UserSchema = new Schema({
+    animals: [AnimalSchema]
 })
-UserSchema.plugin(passportLocalMongoose, { usernameField: 'email', usernameUnique: true })
 
-const UserModel = mongoose.model('User', UserSchema)
+UserSchema.plugin(passportLocalMongoose, { usernameField: 'email' })
 
-module.exports = { UserSchema, UserModel }
+module.exports = UserSchema
