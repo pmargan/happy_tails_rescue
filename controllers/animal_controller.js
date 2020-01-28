@@ -14,7 +14,7 @@ async function index(req, res) {
     return res.json(await AnimalModel.find())
 }
 
-// module.exports = {
-//     create,
-//     index
-// }
+module.exports = {
+    create,
+    index
+}
