@@ -6,4 +6,4 @@ const User = new Schema({})
 
 User.plugin(passportLocalMongoose)
 
-module.exports = UserSchema
+module.exports = User

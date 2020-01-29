@@ -5,8 +5,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const API_PORT = process.env.PORT || 5000
 
-// this is our MongoDB database con string
-
+// get connection string from .env file
 const dbRoute = process.env.DB_HOST
 
 // connects our back end code with the database

@@ -39,17 +39,17 @@ const newDog = {
     description: "Budweiser, or Buddy as he is known always greets you with great excitement when you get home"
     }
 
-describe('Test Animal Routes', () => {
+describe('Test Animal Model', () => {
     beforeEach(() => {
-                // Set up db
-                mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true })
-                require('../database/seeds')
+        // Set up db
+        mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true })
+        require('../database/seeds')
     })
 
     afterEach(async () => {
-                await mongoose.connection.dropDatabase()
-                await mongoose.connection.close()
-            })
+        await mongoose.connection.dropDatabase()
+        await mongoose.connection.close()
+    })
 
     it('Successfully Saves New Dog Entry', async () => {
         const validDog = new AnimalModel(newDog)
