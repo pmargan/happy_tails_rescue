@@ -100,6 +100,28 @@ const dynamicText = [
         To ensure our animals are adoption ready, they have a thorough veterinary examination which includes a full health check, vaccination/s, spay or castration procedure, microchip implanted and are treated monthly for fleas, worms and ticks. If an animal has further medical or behavioural needs, these are completed prior to being placed up for adoption.
         
         All of this helps us learn what each animal needs to have a Happy Tail.`,
+    }, {
+        id: 'contactDog',
+        value: `If you would like to meet one of our dogs available for adoption, please complete the dog application form and we will be in touch within 72 hours.
+        If you have a question about one of our dogs, please send a message to our Facebook page for a same day reply. Enquires sent to the below emails will be responded to within 72 hours
+        Pups 0-4 years: pups@happytailsrescue.com.au
+        Dogs 5+ years: dogs@happytailsrescue.com.au`,
+    }, {
+        id: 'contactCat',
+        value: `If you would like to meet one of our cats available for adoption, please complete the cat application form and we will be in touch within 72 hours​
+        If you have a question about one of our cats, please send a message to our Facebook page for a same day reply. Enquires sent to the below emails will be responded to within 72 hours.
+        Kittens: kittens@happytailsrescue.com.au
+        1+ years: cats@happytailsrescue.com.au`,
+    }, {
+        id: 'fundraisingMain',
+        value: `Help us make a difference in the lives of many dogs and cats by becoming an organisational sponsor or donate an item for raffle!
+    
+        If you have an idea on our next fundraising event, or would like to get involved, please send an email to our fundraising coordinator.`,
+    }, {
+        id: 'mediaEnquiries',
+        value: `Contact our media team to access information, statements or to request an interview at media@happytailsrescue.com.au.
+    
+        Our media coordinator will look to respond to all media requests within 48 hours.`,
     }
 ]
 
@@ -207,33 +229,11 @@ const dynamicText = [
 
     // How can you help?  Buy your own animals a delicious and healthy meal from Pet Dinners, add us to the donation page and voila!  Your animals get nutricious meals delivered to your door AND you help out our foster animals.  Win-win!`,
 
-    // contactDog: `Puppy and Dog enquiries
-    // If you would like to meet one of our dogs available for adoption, please complete the dog application form and we will be in touch within 72 hours.
-    
-    // If you have a question about one of our dogs, please send a message to our Facebook page for a same day reply. Enquires sent to the below emails will be responded to within 72 hours
-    
-    // Pups 0-4 years: pups@happytailsrescue.com.au
-    // Dogs 5+ years: dogs@happytailsrescue.com.au`,
 
-    // contactCat: `Kitten and Cat enquiries
-    // If you would like to meet one of our cats available for adoption, please complete the cat application form and we will be in touch within 72 hours​
-    
-    // If you have a question about one of our cats, please send a message to our Facebook page for a same day reply. Enquires sent to the below emails will be responded to within 72 hours.
-    
-    // Kittens: kittens@happytailsrescue.com.au
-    // 1+ years: cats@happytailsrescue.com.au`,
 
-    // fundraisingMain: `Fundraising enquiries
-    // Help us make a difference in the lives of many dogs and cats by becoming an organisational sponsor or donate an item for raffle!
-    
-    // If you have an idea on our next fundraising event, or would like to get involved, please send an email to our fundraising coordinator.`,
+   
 
-    // mediaEnquiries: `Media enquiries
-    // Contact our media team to access information, statements or to request an interview at media@happytailsrescue.com.au.
-    
-    // Our media coordinator will look to respond to all media requests within 48 hours.`,
 
-// DynamicTextModel.db.dropCollection()
 
 
 DynamicTextModel.deleteMany().catch(err => {})
