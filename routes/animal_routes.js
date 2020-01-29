@@ -3,8 +3,8 @@ const router = express.Router()
 const { AnimalModel } = require("../database/schemas/animal_schema")
 
 
-router.get('/all-animals', (req, res) => {
-    AnimalModel.find()
+router.get('/all-animals', async (req, res) => {
+    let animal = await AnimalModel.find()
         .then(animal => {
             res.send(animal)
         })
