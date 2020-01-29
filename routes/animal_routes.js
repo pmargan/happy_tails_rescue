@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const AnimalModel = require("./../database/schemas/animal_schema")
+const { AnimalModel } = require("../database/schemas/animal_schema")
 
 
 router.get('/all-animals', (req, res) => {
