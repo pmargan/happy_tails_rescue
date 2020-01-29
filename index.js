@@ -6,8 +6,8 @@ const API_PORT = process.env.PORT || 5000
 
 // this is our MongoDB database con string
 
-const dbRoute = 'mongodb+srv://pmargan:psdstrk1@cluster0-9orff.mongodb.net/test?retryWrites=true&w=majority'
-
+// const dbRoute = 'mongodb+srv://pmargan:psdstrk1@cluster0-9orff.mongodb.net/test?retryWrites=true&w=majority'
+const dbRoute = 'mongodb://localhost/test'
 // connects our back end code with the database
 mongoose.connect(dbRoute, { useNewUrlParser: true, useUnifiedTopology: true })
 

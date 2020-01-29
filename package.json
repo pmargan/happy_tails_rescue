@@ -2,13 +2,13 @@
   "name": "happy_tails_rescue",
   "version": "1.0.0",
   "description": "The purpose of this application is to provide the client (Happy Tails Animal Rescue) with a modern and responsive website. The client already had a website made by a volunteer with WordPress however this was not updated regularly, links were broken, the website rendered slowly and had many unnecessary pages. The website also no longer had listings of available animals that are available for adoption. The client agreed that this should be the main purpose of the website.",
-  "main": "server.js",
+  "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
     "test": "mocha",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/NicolasJJensen/happy_tails_rescue#readme",
   "dependencies": {
-    "axios": "^0.19.1",
+    "axios": "^0.19.2",
     "celebrate": "^11.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
