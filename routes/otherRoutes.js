@@ -11,4 +11,11 @@ router.get('/about', async (req, res) => {
     res.status(200).send(doc)
 })
 
+router.get('/contact', async (req, res) => {
+    console.log(typeof DynamicTextModel)
+    let doc = await DynamicTextModel.findOne({ id: 'contactDog' })
+    console.log(doc)
+    res.status(200).send(doc)
+})
+
 module.exports = router

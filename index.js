@@ -29,7 +29,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 app.use(cors())
 
 //need to allocate proper routes 
-app.use('/', require('./routes/test-routes'))
+app.use('/', require('./routes/otherRoutes'))
 
 
 app.use('/auth', auth) 
