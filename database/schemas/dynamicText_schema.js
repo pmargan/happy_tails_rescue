@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const DynamicTextSchema = new Schema({
+const ParagraphSchema = new Schema({
   id: {
     type: String,
     required: true,
@@ -11,8 +11,18 @@ const DynamicTextSchema = new Schema({
   value: {
     type: String,
     required: true,
+    unique: true
   }
-  })
+})
+
+const DynamicTextSchema = new Schema({
+
+  id: {
+    type: String,
+    required: true
+  },
+  value: [ParagraphSchema]
+})
   
   const DynamicTextModel = mongoose.model('DynamicText', DynamicTextSchema)
   
