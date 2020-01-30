@@ -2,12 +2,12 @@ const express = require('express')
 const app = express()
 require('dotenv').config()
 const mongoose = require('mongoose')
-const API_PORT = process.env.PORT || 5005
+const cors = require('cors')
+const API_PORT = process.env.PORT || 5000
 
-// this is our MongoDB database con string
+// get connection string from .env file
+const dbRoute = process.env.DB_HOST
 
-// const dbRoute = 'mongodb+srv://pmargan:psdstrk1@cluster0-9orff.mongodb.net/test?retryWrites=true&w=majority'
-const dbRoute = 'mongodb://localhost/test'
 // connects our back end code with the database
 mongoose.connect(dbRoute, { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -22,6 +22,14 @@ db.once('open', () => {
 
 // checks if connection with the database is successful
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+
+
+// not secure
+app.use(cors())
+
+//need to allocate proper routes 
+app.use('/', require('./routes/otherRoutes'))
+
 
 app.use('/auth', auth) 
 app.use('/animals', animals),
