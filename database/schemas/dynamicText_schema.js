@@ -8,6 +8,9 @@ const ParagraphSchema = new Schema({
     required: true,
     unique: true
   },
+  title: {
+    type: String,
+  },
   value: {
     type: String,
     required: true,
