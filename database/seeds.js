@@ -67,14 +67,10 @@ const animals = [
     }
 ]
 
-AnimalModel.create(animals)
+AnimalModel.deleteMany({}, err => (
+    AnimalModel.create(animals)
+))
 
-// AnimalModel.insertMany(mockData, (err, docs) => {
-//     if (err) {
-//         console.log(err)
-//         console.log('there has been an error seeding the database')
-//     }
-// })
 
 const dynamicText = {
     welcomePage: `Welcome to Happy Tails Animal Rescue Inc.
@@ -228,4 +224,7 @@ const dynamicText = {
     Our media coordinator will look to respond to all media requests within 48 hours.`,
 }
 
-DynamicTextModel.create(dynamicText)
+DynamicTextModel.deleteMany({}, err => (
+    DynamicTextModel.create(dynamicText)
+))
+

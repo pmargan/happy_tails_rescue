@@ -1,53 +1,63 @@
-const express = require("express")
-const router = express.Router()
-const { AnimalModel } = require("../database/schemas/animal_schema")
+const express = require("express");
+const router = express.Router();
+const { AnimalModel } = require("../database/schemas/animal_schema");
 
-
-router.get('/all-animals', (req, res) => {
+router.get("/all-animals", async (req, res) => {
     AnimalModel.find()
         .then(animal => {
-            res.send(animal)
+            // console.log(animal)
+            res.send(animal);
         })
-        .catch(err => res.status(500).send =({
-            error: err.message
-        }))
-})
+        .catch(err =>
+            res.status(500).send({
+                error: err.message
+            })
+        );
+});
 
-router.get('/cats-kittens', (req, res) => {
-    AnimalModel.findById({ animalType: 'Kitten', animalType: 'Cat' })
-        .then(animal => {
-            res.send(animal)
+router.get("/cats-kittens", (req, res) => {
+    AnimalModel.find({ $or: [{ animalType: "Kitten" }, { animalType: "Cat" }] })
+        .then(animals => {
+            res.send(animals);
         })
-        .catch(err => res.status(500).send =({
-            error: err.message
-        }))
-})
+        .catch(err =>
+            res.status(500).send({
+                error: err.message
+            })
+        );
+});
 
-router.get('/dogs-puppies', (req, res) => {
-    AnimalModel.findById({ animalType: 'Puppy', animalType: 'Dog' })
-        .then(animal => {
-            res.send(animal)
+router.get("/dogs-puppies", (req, res) => {
+    AnimalModel.find({ $or: [{ animalType: "Puppy" }, { animalType: "Dog" }] })
+        .then(animals => {
+            res.send(animals);
         })
-        .catch(err => res.status(500).send =({
-            error: err.message
-        }))
-})
+        .catch(
+            err =>
+                (res.status(500).send = {
+                    error: err.message
+                })
+        );
+});
 
-router.get('/profile/:id', (req, res) => {
+router.get("/profile/:id", (req, res) => {
     AnimalModel.findById(req.params.id)
         .then(animal => {
-            AnimalModel.findOne({animal: req.params.id})
-                .then(currentAnimal => {
-                    const animal = {...animal}
-                    res.send(currentAnimal)
-                })
+            // if (animal) {
+                res.send(animal);
+            // } else {
+            //     res.status(404).send({ error: "Animal not found" })
+            // }
         })
-        .catch(err => res.status(500).send =({
-            error: err.message
-        }))
-})
+        .catch(
+            err =>
+                res.status(500).send({
+                    error: err.message
+                })
+        );
+});
 
-router.post('/register', (req, res) => {
+router.post("/register", (req, res) => {
     const newAnimal = new AnimalModel({
         animalPhoto: req.body.animalPhoto,
         animalType: req.body.animalType,
@@ -77,15 +87,15 @@ router.post('/register', (req, res) => {
         description: req.body.description,
         dob: req.body.dob,
         extraNotes: req.body.extraNotes
-    })
-    newAnimal.save()
-})
+    });
+    newAnimal.save();
+});
 
-router.post('/update-animal-profile', function(req, res) {
+router.post("/update-animal-profile", function (req, res) {
     AnimalModel.findOneAndUpdate(
         {
             _id: req.body._id
-        }, 
+        },
         {
             animalPhoto: req.body.animalPhoto,
             animalType: req.body.animalType,
@@ -115,22 +125,22 @@ router.post('/update-animal-profile', function(req, res) {
             description: req.body.description,
             dob: req.body.dob,
             extraNotes: req.body.extraNotes
-        })
+        }
+    )
         .then(result => {
-            res.sendStatus(200)
+            res.sendStatus(200);
         })
         .catch(err => {
-            res.status(500).send(err)
-        })
-})
+            res.status(500).send(err);
+        });
+});
 
-router.post('/delete-animal-profile', function(req, res) {
+router.post("/delete-animal-profile", function (req, res) {
     AnimalModel.findOneAndDelete({
         _id: req.body._id
-    })
-    .catch(err => {
-       res.status(500).send(err)
-    })
-})
+    }).catch(err => {
+        res.status(500).send(err);
+    });
+});
 
-module.exports = router
+module.exports = router;
