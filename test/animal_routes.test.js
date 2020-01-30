@@ -22,6 +22,7 @@ describe('Animals', () => {
       chai.request(server)
         .get('/animals/all-animals')
         .end((err, res) => {
+          // console.log(res.body[0])
           expect(res.body[0].name).to.equal("Budweiser")
           done();
         });
