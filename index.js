@@ -33,8 +33,9 @@ app.use('/', require('./routes/otherRoutes'))
 
 app.use('/auth', auth) 
 app.use('/animals', animals),
-// testing routes
 
+
+// testing routes
 
 // app.get("/", (req, res) => res.send("Welcome"))
 // app.use("/all-animals", animals, (req, res) => res.send("All animals available for adoption"))
