@@ -33,5 +33,33 @@ router.get('/community-programs', async (req, res) => {
     }))
 })
 
+router.get('/foster', async (req, res) => {
+    let doc = await DynamicTextModel.findOne({ id: 'foster' }) 
+    .then(doc => {
+        res.status(200).send(doc)
+    })
+    .catch(err => res.status(500).send =({
+        error: err.message
+    }))
+})
 
+router.get('/help-us', async (req, res) => {
+    let doc = await DynamicTextModel.findOne({ id: 'helpUs' }) 
+    .then(doc => {
+        res.status(200).send(doc)
+    })
+    .catch(err => res.status(500).send =({
+        error: err.message
+    }))
+})
+
+router.get('/volunteer', async (req, res) => {
+    let doc = await DynamicTextModel.findOne({ id: 'volunteer' }) 
+    .then(doc => {
+        res.status(200).send(doc)
+    })
+    .catch(err => res.status(500).send =({
+        error: err.message
+    }))
+})
 module.exports = router
