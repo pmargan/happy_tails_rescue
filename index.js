@@ -27,6 +27,8 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 // not secure
 app.use(cors())
 
+app.use(express.json())
+
 //need to allocate proper routes 
 app.use('/', require('./routes/otherRoutes'))
 

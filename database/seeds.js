@@ -3,7 +3,6 @@ const { DynamicTextModel } = require('./schemas/dynamicText_schema')
 
 const animals = [
     {
-    userId: "1234",
     animalPhoto: "http://lorempixel.com/200/200",
     animalType: "Dog",
     microchip: "abc123456789",
@@ -35,7 +34,6 @@ const animals = [
     },
 
     {
-    userId: "1234",
     animalPhoto: "http://lorempixel.com/200/200",
     animalType: "Cat",
     microchip: "abc987654321",
