@@ -12,7 +12,7 @@ describe('Animals', () => {
   describe('/GET animal', () => {
     it('it should GET all the animals', (done) => {
       chai.request(server)
-        .get('/animals/all-animals')
+        .get('/animals')
         .end((err, res) => {
           expect(res.body.length).to.be.above(0)
           done();
@@ -20,7 +20,7 @@ describe('Animals', () => {
     });
     it('first Animal should have name "Budweiser or Abbey"', (done) => {
       chai.request(server)
-        .get('/animals/all-animals')
+        .get('/animals')
         .end((err, res) => {
           // console.log(res.body[0])
           expect(["Budweiser", "Abbey"]).to.include(res.body[0].name)
@@ -30,7 +30,7 @@ describe('Animals', () => {
 
     it('Expect Animals Array length to equal 2', (done) => {
       chai.request(server)
-        .get('/animals/all-animals')
+        .get('/animals')
         .end((err, res) => {
           expect(res.body.length).to.equal(2)
           done();
@@ -98,7 +98,7 @@ describe('Animals', () => {
   describe('/GET profile-id', () => {
     it('it should GET current animal by ID', (done) => {
       chai.request(server)
-        .get('/animals/all-animals')
+        .get('/animals')
         .end((err, res) => {
           const animal = res.body[0]
           chai.request(server)
