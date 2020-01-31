@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { AnimalModel } = require("../database/schemas/animal_schema");
 
-router.get("/adopt", async (req, res) => {
+router.get("/", async (req, res) => {
     AnimalModel.find()
         .then(animal => {
             res.send(animal)
@@ -91,8 +91,7 @@ router.post("/update-animal-profile", function (req, res) {
     AnimalModel.findOneAndUpdate(
         {
             _id: req.body._id
-        },
-        {
+        },{
             animalPhoto: req.body.animalPhoto,
             animalType: req.body.animalType,
             gender: req.body.gender,
@@ -124,7 +123,7 @@ router.post("/update-animal-profile", function (req, res) {
         }
     )
         .then(result => {
-            res.sendStatus(200);
+            res.sendStatus(200)
         })
         .catch(err => {
             res.status(500).send(err);
