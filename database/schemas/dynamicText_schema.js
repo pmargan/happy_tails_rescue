@@ -5,16 +5,14 @@ const Schema = mongoose.Schema
 const ParagraphSchema = new Schema({
   id: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   title: {
     type: String,
   },
   value: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   }
 })
 
