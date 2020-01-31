@@ -2,30 +2,30 @@ const express = require("express");
 const router = express.Router();
 const { AnimalModel } = require("../database/schemas/animal_schema");
 
-router.get("/all-animals", async (req, res) => {
+router.get("/adopt", async (req, res) => {
     AnimalModel.find()
         .then(animal => {
             // console.log(animal)
-            res.send(animal);
+            res.send(animal)
         })
         .catch(err =>
             res.status(500).send({
                 error: err.message
             })
-        );
-});
+        )
+})
 
 router.get("/cats-kittens", (req, res) => {
     AnimalModel.find({ $or: [{ animalType: "Kitten" }, { animalType: "Cat" }] })
         .then(animals => {
-            res.send(animals);
+            res.send(animals)
         })
         .catch(err =>
             res.status(500).send({
                 error: err.message
             })
-        );
-});
+        )
+})
 
 router.get("/dogs-puppies", (req, res) => {
     AnimalModel.find({ $or: [{ animalType: "Puppy" }, { animalType: "Dog" }] })
