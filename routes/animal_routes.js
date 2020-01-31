@@ -5,7 +5,6 @@ const { AnimalModel } = require("../database/schemas/animal_schema");
 router.get("/adopt", async (req, res) => {
     AnimalModel.find()
         .then(animal => {
-            // console.log(animal)
             res.send(animal)
         })
         .catch(err =>
@@ -15,7 +14,7 @@ router.get("/adopt", async (req, res) => {
         )
 })
 
-router.get("/cats-kittens", (req, res) => {
+router.get("/cats-kittens", async (req, res) => {
     AnimalModel.find({ $or: [{ animalType: "Kitten" }, { animalType: "Cat" }] })
         .then(animals => {
             res.send(animals)
@@ -27,35 +26,30 @@ router.get("/cats-kittens", (req, res) => {
         )
 })
 
-router.get("/dogs-puppies", (req, res) => {
+router.get("/dogs-puppies", async (req, res) => {
     AnimalModel.find({ $or: [{ animalType: "Puppy" }, { animalType: "Dog" }] })
         .then(animals => {
             res.send(animals);
         })
         .catch(
             err =>
-                (res.status(500).send = {
-                    error: err.message
-                })
+            (res.status(500).send = {
+                error: err.message
+            })
         );
 });
 
-router.get("/profile/:id", (req, res) => {
-    AnimalModel.findById(req.params.id)
+router.get("/profile/:id", async (req, res) => {
+    AnimalModel.findById(req,params.id)
         .then(animal => {
-            // if (animal) {
-                res.send(animal);
-            // } else {
-            //     res.status(404).send({ error: "Animal not found" })
-            // }
+            res.send(animal)
         })
-        .catch(
-            err =>
-                res.status(500).send({
-                    error: err.message
-                })
-        );
-});
+        .catch(err =>
+            res.status(500).send({
+                error: err.message
+            })
+        )
+})
 
 router.post("/register", (req, res) => {
     const newAnimal = new AnimalModel({
