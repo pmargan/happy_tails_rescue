@@ -58,6 +58,7 @@ router.get("/profile/:id", (req, res) => {
 });
 
 router.post("/register", (req, res) => {
+    // console.log(req.body)
     const newAnimal = new AnimalModel({
         animalPhoto: req.body.animalPhoto,
         animalType: req.body.animalType,
@@ -83,12 +84,13 @@ router.post("/register", (req, res) => {
         desexed: req.body.desexed,
         vaccinated: req.body.vaccinated,
         wormed: req.body.wormed,
-        heartworkTreated: req.body.heartworkTreated,
+        heartwormTreated: req.body.heartwormTreated,
         description: req.body.description,
         dob: req.body.dob,
         extraNotes: req.body.extraNotes
     });
     newAnimal.save();
+    res.send(newAnimal)
 });
 
 router.post("/update-animal-profile", function (req, res) {

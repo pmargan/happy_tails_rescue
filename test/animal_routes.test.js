@@ -111,19 +111,60 @@ describe('Animals', () => {
     });
 
     it('it should fail to get animal by ID if ID not exist', (done) => {
-          chai.request(server)
-            .get(`/animals/profile/1234`)
-            .end((err, res) => {
-              expect(res.status).to.equal(500)
-              done();
-            });
+      chai.request(server)
+        .get(`/animals/profile/1234`)
+        .end((err, res) => {
+          expect(res.status).to.equal(500)
+          done();
+        });
     });
 
   });
-
 
   after(() => {
     mongoose.connection.close()
   })
 
+  describe('/POST register', () => {
+    it('it should create a new animal', (done) => {
+      chai.request(server)
+        .post('/animals/register')
+        // .type('form')
+        .send({
+          animalPhoto: "http://lorempixel.com/200/200",
+          animalType: "Dog",
+          microchip: "abc123456789",
+          name: "Budweiser",
+          age: 1.5,
+          gender: "Male",
+          primaryBreed: "Corgi",
+          secondaryBreed: "",
+          crossBreed: true,
+          color: "Brown",
+          coatType: "Short",
+          size: "Medium",
+          location: "Tarampa, West Brisbane",
+          friendlyWith: "Dogs (MUST be a calm well balanced dog) and cats (can sometimes get over excited and chase). Kids not recommended.",
+          wouldSuit: "Couple, singles, retirees, families",
+          weight: 8,
+          behaviorNotes: "Needs a confident dog owner as he can be snappy",
+          houseTrained: true,
+          adoptionFee: 450,
+          bin: "BIN0000561500753",
+          desexed: true,
+          vaccinated: true,
+          wormed: true,
+          heartwormTreated: true,
+          description: "Budweiser, or Buddy as he is known always greets you with great excitement when you get home"
+        })
+        .end(function (err, res) {
+          // console.log(res.body)
+          expect(err).to.be.null;
+          expect(res).to.have.status(200);
+          done()
+        })
+
+    });
+
+  });
 });
