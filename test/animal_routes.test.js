@@ -18,12 +18,12 @@ describe('Animals', () => {
           done();
         });
     });
-    it('first Animal should have name "Budweiser"', (done) => {
+    it('first Animal should have name "Budweiser or Abbey"', (done) => {
       chai.request(server)
         .get('/animals/all-animals')
         .end((err, res) => {
           // console.log(res.body[0])
-          expect(res.body[0].name).to.equal("Budweiser")
+          expect(["Budweiser", "Abbey"]).to.include(res.body[0].name)
           done();
         });
     });

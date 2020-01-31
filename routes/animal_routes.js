@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { AnimalModel } = require("../database/schemas/animal_schema");
 
-router.get("/adopt", async (req, res) => {
+router.get("/", async (req, res) => {
     AnimalModel.find()
         .then(animal => {
             // console.log(animal)
