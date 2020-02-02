@@ -124,6 +124,8 @@ const AnimalSchema = new Schema({
   }
 })
 
+mongoose.set('useFindAndModify', false);
+
 const AnimalModel = mongoose.model('Animal', AnimalSchema)
 
 module.exports = { AnimalSchema, AnimalModel }

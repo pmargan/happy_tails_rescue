@@ -164,6 +164,35 @@ describe('Animals', () => {
           done()
         })
 
+      })
+
+    })
+
+  describe('/PUT update-animal-profile', () => {
+    it('it should update an animal', (done) => {
+      chai.request(server)
+      .get('/animals/dogs-puppies')
+      .end(function (err, res) {
+        let animal = res.body[0]
+
+        chai.request(server)
+        .put('/animals/update-animal-profile')
+        .send({
+          _id: animal._id,
+          weight: 10
+        })
+        .end(function (err2, res2) {
+          // console.log(res2.body)
+
+          // let expected = {
+          //   ...animal,
+          //   weight: 10
+          // }
+          expect(res2.body.weight).to.be.equal(10)
+          done()
+        })
+      })
+
     });
 
   });

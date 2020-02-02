@@ -93,48 +93,40 @@ router.post("/register", (req, res) => {
     res.send(newAnimal)
 });
 
-router.post("/update-animal-profile", function (req, res) {
-    AnimalModel.findOneAndUpdate(
-        {
-            _id: req.body._id
-        },
-        {
-            animalPhoto: req.body.animalPhoto,
-            animalType: req.body.animalType,
-            gender: req.body.gender,
-            microchip: req.body.microchip,
-            name: req.body.name,
-            age: req.body.age,
-            primaryBreed: req.body.primaryBreed,
-            secondaryBreed: req.body.secondaryBreed,
-            crossBreed: req.body.crossBreed,
-            color: req.body.color,
-            coatType: req.body.coatType,
-            size: req.body.size,
-            location: req.body.location,
-            friendlyWith: req.body.friendlyWith,
-            wouldSuit: req.body.wouldSuit,
-            weight: req.body.weight,
-            behaviorNotes: req.body.behaviorNotes,
-            medicalNotes: req.body.medicalNotes,
-            houseTrained: req.body.houseTrained,
-            adoptionFee: req.body.adoptionFee,
-            bin: req.body.bin,
-            desexed: req.body.desexed,
-            vaccinated: req.body.vaccinated,
-            wormed: req.body.wormed,
-            heartworkTreated: req.body.heartworkTreated,
-            description: req.body.description,
-            dob: req.body.dob,
-            extraNotes: req.body.extraNotes
-        }
-    )
-        .then(result => {
-            res.sendStatus(200);
+router.put("/update-animal-profile", function (req, res) {
+    const id = req.body._id
+    delete req.body._id
+    AnimalModel.findById(id)
+        .then(animal => {
+            animal.set(req.body).save().then(updated => res.send(updated))
+            // if (animal) {
+                // res.send(animal);
+            // } else {
+            //     res.status(404).send({ error: "Animal not found" })
+            // }
         })
-        .catch(err => {
-            res.status(500).send(err);
-        });
+        .catch(
+            err =>
+                res.status(500).send({
+                    error: err.message
+                })
+        );
+
+
+    // AnimalModel.findOneAndUpdate(
+    //     {
+    //         _id: id
+    //     },
+    //     {$set: req.body},
+    //     {returnNewDocument: true}
+    // )
+    //     .then(result => {
+    //         console.log(result)
+    //         res.send(result)
+    //     })
+    //     .catch(err => {
+    //         res.status(500).send(err);
+    //     });
 });
 
 router.post("/delete-animal-profile", function (req, res) {
