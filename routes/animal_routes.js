@@ -134,7 +134,7 @@ router.post("/delete-animal-profile", function (req, res) {
     AnimalModel.findOneAndDelete({
         _id: req.body._id
     }).catch(err => {
-        res.status(500).send(err);
+        res.status(500).send(err)
     });
 });
 

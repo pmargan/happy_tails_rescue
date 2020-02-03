@@ -107,7 +107,7 @@ const AdoptionSchema = new Schema({
         },
         exercise: { // show this question for only dogs
             type: String,
-            enum:['We would go on a run/jog each day', 'We would go on a walk each day', 'We would go walking a few days a week', 'We would throw a ball around the yard each day', 'We would visit the dog park most days', `We wouldn't do any exercise`],
+            enum:['We would go on a run/jog each day', 'We would go on a walk each day', 'We would go walking a few days a week', 'We would throw a ball around the yard each day', 'We would visit the dog park most days', `We would not do any exercise`],
             required: true
         },
         holidays:{
@@ -127,15 +127,11 @@ const AdoptionSchema = new Schema({
         },
         surrenderCirumstances: {
             type: String,
-            enum:['Moving home', 'Moving interstate', 'Moving overseas', 'New child', `New dog/cat that didn't like this dog`, 'Family member develops allergies', `New partner doesn't like this dog`, 'The dog became sick', 'Bad behaviour developed such as barking, digging, chewing etc', 'None of the above - I would be committed to this dog for life'],
+            enum:['Moving home', 'Moving interstate', 'Moving overseas', 'New child', `New dog/cat that does not like this {$type}`, 'Family member develops allergies', `New partner doesn't like this {$type}`, 'The {$type} became sick', 'Bad behaviour developed such as barking, digging, chewing etc', 'None of the above - I would be committed to this {$type} for life'],
             required: true
         },
         homeCheck: {
             type: Boolean,
-            required: true
-        },
-        surrenderAnAnimal: {
-            type: String,
             required: true
         },
         updates: {
