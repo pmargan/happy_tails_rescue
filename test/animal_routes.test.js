@@ -18,12 +18,12 @@ describe('Animals', () => {
           done();
         });
     });
-    it('first Animal should have name "Budweiser"', (done) => {
+    it('first Animal should have name "Budweiser or Abbey"', (done) => {
       chai.request(server)
         .get('/animals')
         .end((err, res) => {
           // console.log(res.body[0])
-          expect(res.body[0].name).to.equal("Budweiser")
+          expect(["Budweiser", "Abbey"]).to.include(res.body[0].name)
           done();
         });
     });
@@ -163,6 +163,35 @@ describe('Animals', () => {
           expect(res).to.have.status(200);
           done()
         })
+
+      })
+
+    })
+
+  describe('/PUT update-animal-profile', () => {
+    it('it should update an animal', (done) => {
+      chai.request(server)
+      .get('/animals/dogs-puppies')
+      .end(function (err, res) {
+        let animal = res.body[0]
+
+        chai.request(server)
+        .put('/animals/update-animal-profile')
+        .send({
+          _id: animal._id,
+          weight: 10
+        })
+        .end(function (err2, res2) {
+          // console.log(res2.body)
+
+          // let expected = {
+          //   ...animal,
+          //   weight: 10
+          // }
+          expect(res2.body.weight).to.be.equal(10)
+          done()
+        })
+      })
 
     });
 
