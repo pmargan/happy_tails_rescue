@@ -17,4 +17,8 @@ router.get('/:id', async (req, res) => {
     .catch(err => res.status(500).send(err))
 })
 
+router.get('/', async (req, res) => {
+  res.send(await DynamicTextModel.find())
+})
+
 module.exports = router
