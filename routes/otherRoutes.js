@@ -3,63 +3,22 @@ const router = express.Router()
 const { DynamicTextModel } = require('../database/schemas/dynamicText_schema')
 const mongoose = require('mongoose')
 
-router.get('/about', async (req, res) => {
-    let doc = await DynamicTextModel.findOne({ id: 'welcomePage' })
-    .then(doc => {
-        res.status(200).send(doc)
-    })
-    .catch(err => res.status(500).send =({
-        error: err.message
-    }))
+router.put('/', async (req, res) => {
+  for(let key of Object.keys(req.body)) {
+    await DynamicTextModel.updateOne({ id: key }, {$set: {value: req.body[key]}})
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
 })
 
-router.get('/contact', async (req, res) => {
-    let doc = await DynamicTextModel.findOne({ id: 'contactPage' }) 
-    .then(doc => {
-        res.status(200).send(doc)
-    })
-    .catch(err => res.status(500).send =({
-        error: err.message
-    }))
+router.get('/:id', async (req, res) => {
+    await DynamicTextModel.findOne({ id: req.params.id })
+    .then(doc => res.send(doc))
+    .catch(err => res.status(500).send(err))
 })
 
-router.get('/community-programs', async (req, res) => {
-    let doc = await DynamicTextModel.findOne({ id: 'communityPrograms' }) 
-    .then(doc => {
-        res.status(200).send(doc)
-    })
-    .catch(err => res.status(500).send =({
-        error: err.message
-    }))
+router.get('/', async (req, res) => {
+  res.send(await DynamicTextModel.find())
 })
 
-router.get('/foster', async (req, res) => {
-    let doc = await DynamicTextModel.findOne({ id: 'foster' }) 
-    .then(doc => {
-        res.status(200).send(doc)
-    })
-    .catch(err => res.status(500).send =({
-        error: err.message
-    }))
-})
-
-router.get('/help-us', async (req, res) => {
-    let doc = await DynamicTextModel.findOne({ id: 'helpUs' }) 
-    .then(doc => {
-        res.status(200).send(doc)
-    })
-    .catch(err => res.status(500).send =({
-        error: err.message
-    }))
-})
-
-router.get('/volunteer', async (req, res) => {
-    let doc = await DynamicTextModel.findOne({ id: 'volunteer' }) 
-    .then(doc => {
-        res.status(200).send(doc)
-    })
-    .catch(err => res.status(500).send =({
-        error: err.message
-    }))
-})
 module.exports = router

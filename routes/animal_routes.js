@@ -3,138 +3,52 @@ const router = express.Router();
 const { AnimalModel } = require("../database/schemas/animal_schema");
 
 router.get("/", async (req, res) => {
-    AnimalModel.find()
-        .then(animal => {
-            // console.log(animal)
-            res.send(animal)
-        })
-        .catch(err =>
-            res.status(500).send({
-                error: err.message
-            })
-        )
+  AnimalModel.find()
+    .then(animal => res.send(animal))
+    .catch(err => res.status(500).send(err))
 })
 
-router.get("/cats-kittens", (req, res) => {
-    AnimalModel.find({ $or: [{ animalType: "Kitten" }, { animalType: "Cat" }] })
-        .then(animals => {
-            res.send(animals)
-        })
-        .catch(err =>
-            res.status(500).send({
-                error: err.message
-            })
-        )
+router.get("/cats", (req, res) => {
+  AnimalModel.find({ $or: [{ animalType: "Kitten" }, { animalType: "Cat" }] })
+    .then(animals => res.send(animals))
+    .catch(err => res.status(500).send(err))
 })
 
-router.get("/dogs-puppies", (req, res) => {
-    AnimalModel.find({ $or: [{ animalType: "Puppy" }, { animalType: "Dog" }] })
-        .then(animals => {
-            res.send(animals);
-        })
-        .catch(
-            err =>
-                (res.status(500).send = {
-                    error: err.message
-                })
-        );
-});
+router.get("/dogs", (req, res) => {
+  AnimalModel.find({ $or: [{ animalType: "Puppy" }, { animalType: "Dog" }] })
+    .then(animals => res.send(animals))
+    .catch(err => res.status(500).send(err))
+})
 
-router.get("/profile/:id", (req, res) => {
-    AnimalModel.findById(req.params.id)
-        .then(animal => {
-            // if (animal) {
-                res.send(animal);
-            // } else {
-            //     res.status(404).send({ error: "Animal not found" })
-            // }
-        })
-        .catch(
-            err =>
-                res.status(500).send({
-                    error: err.message
-                })
-        );
-});
+router.get("/:id", (req, res) => {
+  AnimalModel.findById(req.params.id)
+    .then(animal => res.send(animal))
+    .catch(err =>res.status(500).send(err))
+})
 
-router.post("/register", (req, res) => {
-    // console.log(req.body)
-    const newAnimal = new AnimalModel({
-        animalPhoto: req.body.animalPhoto,
-        animalType: req.body.animalType,
-        gender: req.body.gender,
-        microchip: req.body.microchip,
-        name: req.body.name,
-        age: req.body.age,
-        primaryBreed: req.body.primaryBreed,
-        secondaryBreed: req.body.secondaryBreed,
-        crossBreed: req.body.crossBreed,
-        color: req.body.color,
-        coatType: req.body.coatType,
-        size: req.body.size,
-        location: req.body.location,
-        friendlyWith: req.body.friendlyWith,
-        wouldSuit: req.body.wouldSuit,
-        weight: req.body.weight,
-        behaviorNotes: req.body.behaviorNotes,
-        medicalNotes: req.body.medicalNotes,
-        houseTrained: req.body.houseTrained,
-        adoptionFee: req.body.adoptionFee,
-        bin: req.body.bin,
-        desexed: req.body.desexed,
-        vaccinated: req.body.vaccinated,
-        wormed: req.body.wormed,
-        heartwormTreated: req.body.heartwormTreated,
-        description: req.body.description,
-        dob: req.body.dob,
-        extraNotes: req.body.extraNotes
-    });
-    newAnimal.save();
-    res.send(newAnimal)
-});
+router.post("/", async (req, res) => {
+  // filter the body
+  const newAnimal = new AnimalModel({...req.body})
+  const {err} = await newAnimal.save()
 
-router.put("/update-animal-profile", function (req, res) {
-    const id = req.body._id
-    delete req.body._id
-    AnimalModel.findById(id)
-        .then(animal => {
-            animal.set(req.body).save().then(updated => res.send(updated))
-            // if (animal) {
-                // res.send(animal);
-            // } else {
-            //     res.status(404).send({ error: "Animal not found" })
-            // }
-        })
-        .catch(
-            err =>
-                res.status(500).send({
-                    error: err.message
-                })
-        );
+  if(err){res.status(400).send(err)}
 
+  res.send(newAnimal)
+})
 
-    // AnimalModel.findOneAndUpdate(
-    //     {
-    //         _id: id
-    //     },
-    //     {$set: req.body},
-    //     {returnNewDocument: true}
-    // )
-    //     .then(result => {
-    //         console.log(result)
-    //         res.send(result)
-    //     })
-    //     .catch(err => {
-    //         res.status(500).send(err);
-    //     });
-});
+router.put("/:id", (req, res) => {
+  AnimalModel.findOneAndUpdate(
+    {_id: req.params.id},
+    {...req.body}
+  )
+    .then((animal) => res.send(animal))
+    .catch(err => res.status(500).send(err))
+})
 
-router.post("/delete-animal-profile", function (req, res) {
-    AnimalModel.findOneAndDelete({
-        _id: req.body._id
-    }).catch(err => {
-        res.status(500).send(err);
-    });
-});
+router.delete("/:id", (req, res) => {
+  AnimalModel.findOneAndDelete({_id: req.params.id})
+    .then(() => res.sendStatus(200))
+    .catch(err => res.status(500).send(err))
+})
 
 module.exports = router;

@@ -42,7 +42,7 @@ describe('Animals', () => {
   describe('/GET cats-kittens', () => {
     it('it should GET all the Cats and Kittens', (done) => {
       chai.request(server)
-        .get('/animals/cats-kittens')
+        .get('/animals/cats')
         .end((err, res) => {
           expect(res.body.length).to.be.above(0)
           done();
@@ -50,7 +50,7 @@ describe('Animals', () => {
     });
     it('first Cat/Kitten should have name "Abbey"', (done) => {
       chai.request(server)
-        .get('/animals/cats-kittens')
+        .get('/animals/cats')
         .end((err, res) => {
           expect(res.body[0].name).to.equal("Abbey")
           done();
@@ -58,7 +58,7 @@ describe('Animals', () => {
     });
     it('Expect Cats/Kittens array length to equal 1', (done) => {
       chai.request(server)
-        .get('/animals/cats-kittens')
+        .get('/animals/cats')
         .end((err, res) => {
           expect(res.body.length).to.equal(1)
           done();
@@ -70,7 +70,7 @@ describe('Animals', () => {
   describe('/GET dogs-puppies', () => {
     it('it should GET all Dogs and Puppies', (done) => {
       chai.request(server)
-        .get('/animals/dogs-puppies')
+        .get('/animals/dogs')
         .end((err, res) => {
           expect(res.body.length).to.be.above(0)
           done();
@@ -78,7 +78,7 @@ describe('Animals', () => {
     });
     it('first Dogs/Puppies should have name "Budweiser"', (done) => {
       chai.request(server)
-        .get('/animals/dogs-puppies')
+        .get('/animals/dogs')
         .end((err, res) => {
           expect(res.body[0].name).to.equal("Budweiser")
           done();
@@ -86,7 +86,7 @@ describe('Animals', () => {
     });
     it('Expect Dogs/Puppies array length to equal 1', (done) => {
       chai.request(server)
-        .get('/animals/dogs-puppies')
+        .get('/animals/dogs')
         .end((err, res) => {
           expect(res.body.length).to.equal(1)
           done();
@@ -112,7 +112,7 @@ describe('Animals', () => {
 
     it('it should fail to get animal by ID if ID not exist', (done) => {
       chai.request(server)
-        .get(`/animals/profile/1234`)
+        .get(`/animals/1234`)
         .end((err, res) => {
           expect(res.status).to.equal(500)
           done();
@@ -128,7 +128,7 @@ describe('Animals', () => {
   describe('/POST register', () => {
     it('it should create a new animal', (done) => {
       chai.request(server)
-        .post('/animals/register')
+        .post('/animals')
         // .type('form')
         .send({
           animalPhoto: "http://lorempixel.com/200/200",
