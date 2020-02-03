@@ -39,7 +39,8 @@ router.post("/", async (req, res) => {
 router.put("/:id", (req, res) => {
   AnimalModel.findOneAndUpdate(
     {_id: req.params.id},
-    {...req.body}
+    {...req.body},
+    {new: true}
   )
     .then((animal) => res.send(animal))
     .catch(err => res.status(500).send(err))
