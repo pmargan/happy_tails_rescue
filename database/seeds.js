@@ -163,21 +163,70 @@ const dynamicText = [
                 title: "Rehoming Assistance",
                 value: "Do you need help rehoming your cat or dog? We can provide assistance.",
             }, {
-                id: 'lastLitterMain',
+                id: 'lastLitterMainP1',
                 title: "Last Litter",
-                value: "Happy Tails Animal Rescue Inc. is committed to reducing the number of unwanted and homeless dogs and cats in  South East Queensland and Northern New South Wales. Surrender your unwanted litter to us to be fully vetted and rehomed  and we will desex the Mum at one of our vets free of charge. Have a pregnant pet and want help to desex Mum and rehome the babies?  Send us a message via our Facebook page or email us admissions@happytailsrescue.com.au. Interested in sponsoring this program?  Email fostering@happytailsrescue.com.au",
+                value: `Happy Tails Animal Rescue Inc. is committed to reducing the number of unwanted and homeless dogs and cats in 
+                South East Queensland and Northern New South Wales. Surrender your unwanted litter to us to be fully vetted and rehomed 
+                and we will desex the Mum at one of our vets free of charge. Have a pregnant pet and want help to desex Mum and rehome the babies? `,
             }, {
-                id: 'pets2SafetyMain',
+                id: 'lastLitterMainP2',
+                value: `Send us a message via our Facebook page or email us admissions@happytailsrescue.com.au.`
+            }, {
+                id: 'lastLitterMainP3',
+                value: `Interested in sponsoring this program?  Email fostering@happytailsrescue.com.au`
+            }, {
+                id: 'pets2SafetyMainP1',
                 title: "Pets 2 Safety",
-                value: "Happy Tails Animal Rescue Inc. has proudly partnered with DV Connect to provide temporary and emergency housing for animals of individuals at risk or experiencing domestic violence in Queensland. This is a new program currently in its early stages and is not yet available to the public. Are you currently in a DV relationship and need support? You deserve a life without domestic violence. Contact DV Connect on 1800 811 811 24 hours a day or visit their website http://www.dvconnect.org/. Interested in becoming a foster carer or sponsoring this program?  Email pets2safety@happytailsrescue.com.au",
+                value: `Happy Tails Animal Rescue Inc. has proudly partnered with DV Connect to provide temporary and emergency housing for 
+                animals of individuals at risk or experiencing domestic violence in Queensland.`
             }, {
-                id: 'rehomingAssistMain',
+                id: 'pets2SafetyMainP2',
+                value: `This is a new program currently in its early stages and is not yet available to the public.`
+            }, {
+                id: 'pets2SafetyMainP3',
+                value: `Are you currently in a DV relationship and need support? You deserve a life without domestic violence.`
+            }, {
+                id: 'pets2SafetyMainP4',
+                value: `Contact DV Connect on 1800 811 811 24 hours a day or visit their website http://www.dvconnect.org/.`
+            }, {
+                id: 'pets2SafetyMainP5',
+                value: `Interested in becoming a foster carer or sponsoring this program?  Email pets2safety@happytailsrescue.com.au`
+            }, {
+                id: 'rehomingAssistMainP1',
                 title: "Rehoming Assistance",
-                value: "If you require assistance with rehoming your pet, please complete the relevant application form below. Once the application form and photo/s are received we will email you with confirmation and will commence seeking a foster home for your pet.  Please ensure you tell us as much information as you can and upload a fair amount of good quality, clear photos as this will assist us in finding a foster home.  Please let us know if your pet is rehomed while we are in the process of looking for a foster home. We will contact you as soon as a foster home is found. *PLEASE NOTE* If you surrender your pet to Happy Tails Animal Rescue you will have a 72 hour cooling off period after the physical handover where you may reclaim your pet. If during the cooling off period any urgent vet work has been completed by Happy Tails we will require reimbursement for lost costs before handing your pet back.",
+                value: `If you require assistance with rehoming your pet, please complete the relevant application form below. Once the application 
+                form and photo/s are received we will email you with confirmation and will commence seeking a foster home for your pet.  Please 
+                ensure you tell us as much information as you can and upload a fair amount of good quality, clear photos as this will assist us in 
+                finding a foster home.  Please let us know if your pet is rehomed while we are in the process of looking for a foster home. We will 
+                contact you as soon as a foster home is found.`
             }, {
-                id: 'goldenTailsMain',
-                title: "Golden Tails", 
-                value: "Sponsor an animal; help save a life. Golden Tails is our commitment to care for animals who are unable to be rehomed due to medical or behavioural issues. The animals that enter our Golden Tails Program will be cared for for the remainder of their lives. Our dedicated foster carers provide them with a warm home and as much love as they can handle; we provide the rest. Caring for our Golden Tails involves a great many things; from prescription food, medication, rehabilitation services, surgeries and routine vet procedures.  When you choose to sponsor one of our animals, you aren’t just doing a good thing, you are indeed helping to save a life, to make their life better. When you sponsor an animal, you will receive a sponsorship packet which includes: details about your sponsored animal and their daily needs, a sponsorship certificate with a photo, and a report on the animal’s well-being. And of course, you’ll also get that good feeling that we all get when we know we’re helping an animal, which is always the best feeling of all. If you’d like to meet the animal you want to sponsor, send us an email and prepare to be charmed.",
+                id: 'rehomingAssistMainP2',
+                value: `* PLEASE NOTE *`
+            }, {
+                id: 'rehomingAssistMainP3',
+                value: `If you surrender your pet to Happy Tails Animal Rescue you will have a 72 hour cooling off period after the physical 
+                handover where you may reclaim your pet. If during the cooling off period any urgent vet work has been completed by Happy Tails we 
+                will require reimbursement for lost costs before handing your pet back.`
+            },{
+                id: 'goldenTailsMainP1',
+                title: "Golden Tails",
+                value: `Sponsor an animal; help save a life. `
+            }, {
+                id: 'goldenTailsMainP2',
+                value: `Golden Tails is our commitment to care for animals who are unable to be rehomed due to medical or behavioural issues. The animals 
+                that enter our Golden Tails Program will be cared for for the remainder of their lives. Our dedicated foster carers provide them with a 
+                warm home and as much love as they can handle; we provide the rest.`
+            }, {
+                id: 'goldenTailsMainP3',
+                value: `Caring for our Golden Tails involves a great many things; from prescription food, medication, rehabilitation services, surgeries and 
+                routine vet procedures.  When you choose to sponsor one of our animals, you aren’t just doing a good thing, you are indeed helping to 
+                save a life, to make their life better.`
+            }, {
+                id: 'goldenTailsMainP4',
+                value: `When you sponsor an animal, you will receive a sponsorship packet which includes: details about your sponsored animal and their daily 
+                needs, a sponsorship certificate with a photo, and a report on the animal’s well-being. And of course, you’ll also get that good feeling 
+                that we all get when we know we’re helping an animal, which is always the best feeling of all. If you’d like to meet the animal you want 
+                to sponsor, send us an email and prepare to be charmed.`  
             }
         ]
     },
@@ -282,12 +331,44 @@ const dynamicText = [
         id: 'adopt',
         value: [
             {
-                id: 'adoptForm',
-                value: "Happy Tails Animal Rescue Inc. require an application form to be completed if you are interested in adopting a rescue pet from our organisation. The application is then passed onto the foster family for consideration. It may seem like a lot of information, but  it helps us match the most suited family to each dog and vice versa! If you are short listed for the particular dog or puppy you applied for, you wil contacted by a team member/foster carer of Happy  Tails Animal Rescue Inc. to arrange a meet a greet within one week of receiving application. Happy Tails Animal Rescue Inc. wants the experience of adopting a new family member to  good one and we will occasionally suggest  a different dog as your situation may not meet the needs of the individual dog you  applied for. Happy Tails Animal Rescue Inc. have a two week trial period for every rescue animal. At end of the two weeks if our dog is happy  with you and you are happy with them, we will sign over all of the paperwork. If the tria not working out then the dog is able to  be returned for a full refund of the adoption fee minus a $50 administration fee. *PLEASE NOTE* Completion of this application and associated consultations etc does not guarantee  adoption approval of a Happy Tails Animal Rescue  Inc. animal. We will however take every step to match you with the right pet for your needs.",
+                id: 'adoptMainP1',
+                value: `Thank you for allowing Happy Tails the chance to find you a new family member! We are thrilled to go on this journey with you and 
+                thank you for giving a rescue animal a second chance at both love and life. Each Happy Tails animal is placed into a dedicated foster home 
+                where their true personality gets to shine. For some of our animals, this is the first time they have been in a loving home. They spend 
+                time learning how to be a part of a family, learning to trust and learning to love again. `,
+            },{
+                id: 'adoptMainP2',
+                value: `To ensure our animals are adoption ready, they 
+                have a thorough veterinary examination which includes a full health check, vaccination/s, spay or castration procedure, microchip implanted 
+                and are treated monthly for fleas, worms and ticks. If an animal has further medical or behavioural needs, these are completed prior to 
+                being placed up for adoption. All of this helps us learn what each animal needs to have a Happy Tail`,
             }, {
-                id: 'adoptMain',
-                value: "Thank you for allowing Happy Tails the chance to find you a new family member! We are thrilled to go on this journey with you and  thank you for giving a rescue animal a second chance at both love and life. Each Happy T animal is placed into a dedicated foster home  where their true personality gets to shine. For some of our animals, this is the first  they have been in a loving home. They spend  time learning how to be a part of a family, learning to trust and learning to love again ensure our animals are adoption ready, they  have a thorough veterinary examination which includes a full health check, vaccinatio spay or castration procedure, microchip implanted  and are treated monthly for fleas, worms and ticks. If an animal has further medica behavioural needs, these are completed prior to  being placed up for adoption. All of this helps us learn what each animal needs to ha Happy Tail",
-            }
+                id: 'adoptFormP1',
+                title: 'Adoption Form',
+                value: `Happy Tails Animal Rescue Inc. require an application form to be completed if you are interested in adopting a rescue pet from 
+                our organisation. The application is then passed onto the foster family for consideration. It may seem like a lot of information, but 
+                it helps us match the most suited family to each dog and vice versa!`,
+            }, {
+                id: 'adoptFormP2',
+                value: `If you are short listed for the particular dog or puppy you applied for, you will be contacted by a team member/foster carer of Happy 
+                Tails Animal Rescue Inc. to arrange a meet a greet within one week of receiving the application.`,
+            }, {
+                id: 'adoptFormP3',
+                value: `Happy Tails Animal Rescue Inc. wants the experience of adopting a new family member to be a good one and we will occasionally suggest 
+                a different dog as your situation may not meet the needs of the individual dog you have applied for.`,
+            }, {
+                id: 'adoptFormP4',
+                value: `Happy Tails Animal Rescue Inc. have a two week trial period for every rescue animal. At the end of the two weeks if our dog is happy 
+                with you and you are happy with them, we will sign over all of the paperwork. If the trial is not working out then the dog is able to 
+                be returned for a full refund of the adoption fee minus a $50 administration fee.`,
+            }, {
+                id: 'adoptFormP5',
+                value: `*PLEASE NOTE*`
+            }, {
+                id: 'adoptFormP6',
+                value: `Completion of this application and associated consultations etc does not guarantee your adoption approval of a Happy Tails Animal Rescue 
+                Inc. animal. We will however take every step to match you with the right pet for your needs.`
+            },
         ]
     }
 ]
