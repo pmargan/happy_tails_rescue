@@ -264,7 +264,9 @@ const dynamicText = [
             }, {
                 id: 'donateSnippet',
                 title: 'Donate',
-                value: "One off or recurring donations make a huge difference in  the lives of our animals",
+                value: `One off or recurring donations make a huge difference in  the lives of our animals`,
+                link: "/donate",
+                linkText: "Donate Now Playa"
             }, {
                 id: 'donateMain',
                 value: "Happy Tails Animal Rescue Inc. is a not-for-profit registered charity who rely heavily on the generous hearts of the public. Please consider making a tax deductible one-off or regular monthly donation or sponsor one of our Golden Tails animals. We make sure every dollar counts.  We use the donations to complete necessary vetwork, training and rehabilitation services for all animals in care; to ensure they are ready to find their forever homes.",
