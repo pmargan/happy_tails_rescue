@@ -8,28 +8,36 @@ const AdoptionSchema = new Schema({
 
         firstName: {
         type: String,
-        required: true
+        //require: true
         },
         lastName: {
         type: String,
-        required: true
+        //require: true
         },
         contactNumber: {
         type: String,
-        required: true
+        //require: true
         },
         email: {
             type: String,
-            required: true
+            //require: true
         },
-        address: {
+        addressStreet: {
             type: String,
-            required: true
+            //require: true
+        },
+        addressSuburb: {
+            type: String,
+            //require: true
+        },
+        addressPostcode: {
+            type: String,
+            //require: true
         },
         hearAboutUs: {
             type: String,
             enum: ['Facebook', 'Pet Rescue', 'Friends or Family', 'Event', 'SavourLife'],
-            required: true
+            //require: true
         }
     },
 
@@ -38,35 +46,35 @@ const AdoptionSchema = new Schema({
         type: {
             type: String,
             enum: ['Cat', 'Dog'],
-            required: true
+            //require: true
         },
         name: {
             type: String,
-            required: true
+            //require: true
         },  
         age: {
             type: String,
-            required: true
+            //require: true
         },
         breed: {
             type: String,
-            required: true
+            //require: true
         },
         whyAdoption: {
             type: String,
-            required: true
+            //require: true
         },
         whyThisAnimal: {
             type: String,
-            required: true
+            //require: true
         },
         desirableCharacteristics: {
             type: String,
-            required: true
+            //require: true
         },
         undesirableCharacteristics: {
             type: String,
-            required: true
+            //require: true
         }
     },
 
@@ -75,89 +83,89 @@ const AdoptionSchema = new Schema({
         houseOwnership: {
             type: String,
             enum: ['I own my own home', 'I rent but have permission from real estate, landlord or body corp to have pets', 'I rent and do not have currently have permission (will seek asap)'],
-            required: true
+            //require: true
         },
         livingArrangementDayNight: {
             type: String,
-            required: true
+            //require: true
         },
         describeHomeFencing: { // show this question for only dogs
             type: String,
-            required: false
+            //require: false
         },
         otherPets: {
             type: String,
-            required: true
+            //require: true
         },
         otherPetsVetwork: {
             type: String,
-            required: true
+            //require: true
         },
         otherPeople: {
             type: String,
-            required: true
+            //require: true
         }
     },
 
     lifestyle:{
 
         homeAloneHours:{
-            type: Number,
-            required: true
+            type: String,
+            //require: true
         },
         exercise: { // show this question for only dogs
             type: String,
             enum:['We would go on a run/jog each day', 'We would go on a walk each day', 'We would go walking a few days a week', 'We would throw a ball around the yard each day', 'We would visit the dog park most days', `We would not do any exercise`],
-            required: true
+            //require: true
         },
         holidays:{
             type: String,
-            required: true
+            //require: true
         }
         },
         seriousStuff: {
 
         surrenderAnAnimal: {
             type: String,
-            required: true
+            //require: true
         },
         refusedAnAnimal: {
             type: String,
-            required: true
+            //require: true
         },
         surrenderCirumstances: {
             type: String,
             enum:['Moving home', 'Moving interstate', 'Moving overseas', 'New child', `New dog/cat that does not like this {$type}`, 'Family member develops allergies', `New partner doesn't like this {$type}`, 'The {$type} became sick', 'Bad behaviour developed such as barking, digging, chewing etc', 'None of the above - I would be committed to this {$type} for life'],
-            required: true
+            //require: true
         },
         homeCheck: {
             type: Boolean,
-            required: true
+            //require: true
         },
         updates: {
             type: Boolean,
-            required: true
+            //require: true
         },
         returnAnimal: {
             type: Boolean,
-            required: true
+            //require: true
         },
         extraInfo: {
             type: String,
-            required: true
+            //require: true
         }
         },
 
         newsletter: {
             type: Boolean,
-            required: true
+            //require: true
         },
 
     adoptionContract: {
 
         agreeAll: {
             type: Boolean,
-            required: true
+            //require: true
         }
     },
 
@@ -165,11 +173,11 @@ const AdoptionSchema = new Schema({
 
         fullName: {
             type: String,
-            required: true
+            //require: true
         },
         sign:{
             type: String,
-            required: true
+            //require: true
         }
     }
   })
