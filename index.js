@@ -17,6 +17,7 @@ const db = mongoose.connection
 const animals = require("./routes/animal_routes")
 const auth = require("./routes/auth_routes")
 const text = require('./routes/otherRoutes')
+const adoption = require('./routes/adoption_routes')
 
 //------------------------------------------------//
 //----------REMOVE BEFORE PUTTING ONLINE----------//
@@ -43,6 +44,7 @@ app.use('*', cloudinaryConfig)
 app.use('/text', text)
 app.use('/auth', auth) 
 app.use('/animals', animals)
+app.use('/adoption', adoption)
 
 app.on('close', () => {console.log('closing')})
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`))

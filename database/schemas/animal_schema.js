@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 
 const AnimalSchema = new Schema({
 
-  animalPhoto: {
-    type: String,
+  animalPhotos: {
+    type: Array,
     required: true
   },
   animalType: {

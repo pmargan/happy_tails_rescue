@@ -39,7 +39,7 @@ router.post("/", multerUploads, async (req, res) => {
   if(req.files) {
     req.body.animalPhotos = await uploadFiles(req.files)
   }
-  req = filter(req.body)
+  req.body = filter(req.body)
 
   const newAnimal = new AnimalModel({...req.body})
   const {err} = await newAnimal.save()
@@ -53,7 +53,7 @@ router.put("/:id", multerUploads, async (req, res) => {
   if(req.files) {
     req.body.animalPhotos = await uploadFiles(req.files)
   }
-  req = filter(req.body)
+  req.body = filter(req.body)
 
   AnimalModel.findOneAndUpdate(
     {_id: req.params.id},
