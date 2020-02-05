@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const { DynamicTextModel } = require('../database/schemas/dynamicText_schema')
+const { AdoptionModel } = require('../database/schemas/adoption_schema')
 const mongoose = require('mongoose')
 
 router.put('/', async (req, res) => {
@@ -22,6 +23,15 @@ router.get('/', async (req, res) => {
   await DynamicTextModel.find()
   .then(text => res.send(text))
   .catch(err => res.status(500).send(err))
+})
+
+router.post('/adoption', async (req, res) => {
+  AdoptionModel.create(req.body).then(doc => {
+    res.send(doc)
+  })
+  .catch(err => {
+    res.send(err)
+  })
 })
 
 module.exports = router

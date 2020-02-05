@@ -5,6 +5,8 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const API_PORT = process.env.PORT || 3001
 
+let { cloudinaryConfig } = require('./services/cloudinaryConfig')
+
 // get connection string from .env file
 const dbRoute = process.env.DB_HOST
 
@@ -34,6 +36,8 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 app.use(cors())
 
 app.use(express.json())
+
+app.use('*', cloudinaryConfig)
 
 //need to allocate proper routes 
 app.use('/text', text)

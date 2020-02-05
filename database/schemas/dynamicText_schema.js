@@ -13,6 +13,12 @@ const ParagraphSchema = new Schema({
   value: {
     type: String,
     required: true
+  },
+  link: {
+    type: String
+  },
+  linkText: {
+    type: String
   }
 })
 
