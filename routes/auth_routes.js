@@ -3,7 +3,7 @@ const router = express.Router()
 const { celebrate, Joi } = require("celebrate")
 const AuthController = require("./../controllers/auth_controller")
 
-router.post("/register", celebrate({
+router.post("/auth/register", celebrate({
     body: {
         username: Joi.string().required(),
         password: Joi.string().required()
