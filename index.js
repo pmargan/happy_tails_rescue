@@ -3,7 +3,7 @@ const app = express()
 require('dotenv').config()
 const mongoose = require('mongoose')
 const cors = require('cors')
-const API_PORT = process.env.PORT || 5000
+const API_PORT = process.env.PORT || 3001
 
 // get connection string from .env file
 const dbRoute = process.env.DB_HOST
@@ -14,6 +14,7 @@ mongoose.connect(dbRoute, { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
 const animals = require("./routes/animal_routes")
 const auth = require("./routes/auth_routes")
+const text = require('./routes/otherRoutes')
 
 //------------------------------------------------//
 //----------REMOVE BEFORE PUTTING ONLINE----------//
@@ -35,10 +36,11 @@ app.use(cors())
 app.use(express.json())
 
 //need to allocate proper routes 
-app.use('/text', require('./routes/otherRoutes'))
+app.use('/text', text)
 app.use('/auth', auth) 
 app.use('/animals', animals)
 
+app.on('close', () => {console.log('closing')})
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`))
 
 module.exports = app
