@@ -19,7 +19,10 @@ router.get('/:id', async (req, res) => {
 })
 
 router.get('/', async (req, res) => {
-  res.send(await DynamicTextModel.find())
+  console.log('requesting')
+  await DynamicTextModel.find()
+  .then(text => res.send(text))
+  .catch(err => res.status(500).send(err))
 })
 
 router.post('/adoption', async (req, res) => {

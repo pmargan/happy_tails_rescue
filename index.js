@@ -3,7 +3,7 @@ const app = express()
 require('dotenv').config()
 const mongoose = require('mongoose')
 const cors = require('cors')
-const API_PORT = process.env.PORT || 5000
+const API_PORT = process.env.PORT || 3001
 
 let { cloudinaryConfig } = require('./services/cloudinaryConfig')
 
@@ -46,6 +46,7 @@ app.use('/auth', auth)
 app.use('/animals', animals)
 app.use('/vets', vets)
 
+app.on('close', () => {console.log('closing')})
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`))
 
 module.exports = app

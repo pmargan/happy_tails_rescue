@@ -31,8 +31,14 @@ router.get("/dogs", (req, res) => {
 
 router.get("/:id", (req, res) => {
   AnimalModel.findById(req.params.id)
-    .then(animal => res.send(animal))
-    .catch(err =>res.status(500).send(err))
+    .then(animal => {
+      if(animal){
+        res.send(animal)
+      } else {
+        res.sendStatus(404)
+      }
+    })
+    .catch(err => res.status(500).send(err))
 })
 
 router.post("/", multerUploads, async (req, res) => {

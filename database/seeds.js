@@ -20,7 +20,7 @@ const animals = [
     wouldSuit: "Couple, singles, retirees, families",
     weight: 8,
     behaviorNotes: "Needs a confident dog owner as he can be snappy",
-    medicalNotes: "grain free",
+    medicalNotes: "Grain free",
     houseTrained: true,
     adoptionFee: 450,
     bin: "BIN0000561500753",
@@ -138,33 +138,24 @@ const dynamicText = [
             {
                 id: 'programsIntro',
                 value: "Here at Happy Tails, we are forever working on programs to help the community; from preventing unwanted litters to  providing education in schools.  Many of these programs are still in planning mode or in pilot phase due to funding.",
-            },{
+            }, {
                 id: 'adoptSnippet',
                 title: "Adoption",
                 value: "The heart of every rescue: getting unwanted or dumped animals and finding their forever family.",
+                link: "/animals",
+                linkText: "See Available Animals"
             }, {
                 id: 'goldenTailsSnippet',
                 title: "Golden Tails", 
                 value: "Golden Tails is our commitment to care for animals who are unable to be rehomed due to medical or behavioural issues. These animals remain in care until their time has come to cross the rainbow bridge.",
-            }, {
+                link: "/goldenTails",
+                linkText: "Learn More"
+            },  {
                 id: 'lastLitterSnippet',
                 title: "Last Litter",
                 value: "Currently in pilot phase.  Happy Tails offer members of the public who have expecting cats or dogs the opportunity to surrender the kittens or pups (plus the Mum temporarily) to us so that we can do all their vetwork incl desexing, we will then rehome the litter.",
             }, {
-                id: 'pets2SafetySnippet',
-                title: "Pets 2 Safety",
-                value: "An initiative with DV Connect to provide temporary and emergency housing for animals of individuals at risk or experiencing domestic violence in Queensland.",
-            }, {
-                id: 'educationTailsSnippet',
-                title: "Education Tails",
-                value: "We will bring some friendly animals to schools, daycares, universities or workplace to educate the importance of desexing your pets and to adopt, not shop.",
-            }, {
-                id: 'rehomingAssistSnippet',
-                title: "Rehoming Assistance",
-                value: "Do you need help rehoming your cat or dog? We can provide assistance.",
-            }, {
                 id: 'lastLitterMainP1',
-                title: "Last Litter",
                 value: `Happy Tails Animal Rescue Inc. is committed to reducing the number of unwanted and homeless dogs and cats in 
                 South East Queensland and Northern New South Wales. Surrender your unwanted litter to us to be fully vetted and rehomed 
                 and we will desex the Mum at one of our vets free of charge. Have a pregnant pet and want help to desex Mum and rehome the babies? `,
@@ -174,9 +165,12 @@ const dynamicText = [
             }, {
                 id: 'lastLitterMainP3',
                 value: `Interested in sponsoring this program?  Email fostering@happytailsrescue.com.au`
+            },{
+                id: 'pets2SafetySnippet',
+                title: "Pets 2 Safety",
+                value: "An initiative with DV Connect to provide temporary and emergency housing for animals of individuals at risk or experiencing domestic violence in Queensland.",
             }, {
                 id: 'pets2SafetyMainP1',
-                title: "Pets 2 Safety",
                 value: `Happy Tails Animal Rescue Inc. has proudly partnered with DV Connect to provide temporary and emergency housing for 
                 animals of individuals at risk or experiencing domestic violence in Queensland.`
             }, {
@@ -192,8 +186,15 @@ const dynamicText = [
                 id: 'pets2SafetyMainP5',
                 value: `Interested in becoming a foster carer or sponsoring this program?  Email pets2safety@happytailsrescue.com.au`
             }, {
-                id: 'rehomingAssistMainP1',
+                id: 'educationTailsSnippet',
+                title: "Education Tails",
+                value: "We will bring some friendly animals to schools, daycares, universities or workplace to educate the importance of desexing your pets and to adopt, not shop.",
+            }, {
+                id: 'rehomingAssistSnippet',
                 title: "Rehoming Assistance",
+                value: "Do you need help rehoming your cat or dog? We can provide assistance.",
+            }, {
+                id: 'rehomingAssistMainP1',
                 value: `If you require assistance with rehoming your pet, please complete the relevant application form below. Once the application 
                 form and photo/s are received we will email you with confirmation and will commence seeking a foster home for your pet.  Please 
                 ensure you tell us as much information as you can and upload a fair amount of good quality, clear photos as this will assist us in 
@@ -207,9 +208,14 @@ const dynamicText = [
                 value: `If you surrender your pet to Happy Tails Animal Rescue you will have a 72 hour cooling off period after the physical 
                 handover where you may reclaim your pet. If during the cooling off period any urgent vet work has been completed by Happy Tails we 
                 will require reimbursement for lost costs before handing your pet back.`
-            },{
+            },
+        ]
+    },
+    {
+        id: 'goldenTails',
+        value: [
+            {
                 id: 'goldenTailsMainP1',
-                title: "Golden Tails",
                 value: `Sponsor an animal; help save a life. `
             }, {
                 id: 'goldenTailsMainP2',
@@ -226,7 +232,7 @@ const dynamicText = [
                 value: `When you sponsor an animal, you will receive a sponsorship packet which includes: details about your sponsored animal and their daily 
                 needs, a sponsorship certificate with a photo, and a report on the animal’s well-being. And of course, you’ll also get that good feeling 
                 that we all get when we know we’re helping an animal, which is always the best feeling of all. If you’d like to meet the animal you want 
-                to sponsor, send us an email and prepare to be charmed.`  
+                to sponsor, send us an email and prepare to be charmed.`,
             }
         ]
     },
@@ -265,8 +271,6 @@ const dynamicText = [
                 id: 'donateSnippet',
                 title: 'Donate',
                 value: `One off or recurring donations make a huge difference in  the lives of our animals`,
-                link: "/donate",
-                linkText: "Donate Now Playa"
             }, {
                 id: 'donateMain',
                 value: "Happy Tails Animal Rescue Inc. is a not-for-profit registered charity who rely heavily on the generous hearts of the public. Please consider making a tax deductible one-off or regular monthly donation or sponsor one of our Golden Tails animals. We make sure every dollar counts.  We use the donations to complete necessary vetwork, training and rehabilitation services for all animals in care; to ensure they are ready to find their forever homes.",
@@ -294,14 +298,20 @@ const dynamicText = [
                 id: 'fosterSnippet',
                 title: 'Foster',
                 value: "Become a foster carer to provide temporary care for an animal in need",
+                link: "/foster",
+                linkText: "Learn More"
             }, {
                 id: 'goldenTailsSnippetHelp',
                 title: "Golden Tails", 
                 value: "Golden Tails is Happy Tails commitment to care for animals who are unable to be rehomed due to medical or behavioural issues. These animals remain in care until their time has come to cross the rainbow bridge.",
+                link: "/goldenTails",
+                linkText: "Learn More"
             }, {
                 id: 'volunteerSnippet',
                 title: 'Volunteer',
                 value: "Do you want to help but unable to foster an animal?  We are always looking for volunteers to help.",
+                link: "/volunteer",
+                linkText: "Learn More"
             }
         ]
     },

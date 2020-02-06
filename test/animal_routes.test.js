@@ -121,10 +121,6 @@ describe('Animals', () => {
 
   });
 
-  after(() => {
-    mongoose.connection.close()
-  })
-
   describe('/POST register', () => {
     it('it should create a new animal', (done) => {
       chai.request(server)
@@ -189,4 +185,30 @@ describe('Animals', () => {
     });
 
   });
+
+  describe('/DELETE deletate selected animal', () => {
+    it('it should delete an animal', (done) => {
+      chai.request(server)
+      .get('/animals/dogs')
+      .end(function (err, res) {
+        let animal = res.body[0]
+
+        chai.request(server)
+        .delete(`/animals/${animal._id}`)
+       
+        .end(function (err2, res2) {
+
+          chai.request(server)
+          .get(`/animals/${animal._id}`)
+          .end((err, res3) => {
+            expect(res3.status).to.be.equal(404)
+            done()
+          })
+        })
+      })
+
+    });
+
+  });
+
 });
