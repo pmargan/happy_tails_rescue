@@ -4,18 +4,7 @@ require('dotenv').config()
 const { AnimalModel } = require("../database/schemas/animal_schema")
 let { multerUploads } = require('../middleware/multerUpload')
 let { uploadFiles } = require('../services/uploader')
-
-router.get("/", async (req, res) => {
-
-  // find all animals if admin account
-  // AnimalModel.find()
-  //   .then(animal => res.send(animal))
-  //   .catch(err => res.status(500).send(err))
-
-  AnimalModel.find({pending: false})
-    .then(animal => res.send(animal))
-    .catch(err => res.status(500).send(err))
-})
+const auth = require('../services/auth')
 
 router.get("/approved", async (req, res) => {
   AnimalModel.find({pending: false})
@@ -23,7 +12,11 @@ router.get("/approved", async (req, res) => {
     .catch(err => res.status(500).send(err))
 })
 
-router.get("/notApproved", async (req, res) => {
+router.get("/notApproved", auth, async (req, res) => {
+  if(!req.user){
+    res.send('You are not authorized to access this page')
+  }
+
   AnimalModel.find({pending: true})
     .then(animal => res.send(animal))
     .catch(err => res.status(500).send(err))
@@ -53,13 +46,17 @@ router.get("/:id", (req, res) => {
     .catch(err => res.status(500).send(err))
 })
 
-router.post("/", multerUploads, async (req, res) => {
+router.post("/", multerUploads, auth, async (req, res) => {
+  if(!req.user){
+    res.send('You are not authorized to access this page')
+  }
+
   if(req.files) {
     req.body.animalPhotos = await uploadFiles(req.files)
   }
   req.body = filter(req.body)
 
-  const newAnimal = new AnimalModel({...req.body, adoptionFee: 10, pending: true})
+  const newAnimal = new AnimalModel({...req.body, adoptionFee: 50, pending: false})
   const {err} = await newAnimal.save()
 
   console.log(newAnimal)
@@ -69,7 +66,11 @@ router.post("/", multerUploads, async (req, res) => {
   res.send(newAnimal)
 })
 
-router.put("/:id/approve", async (req, res) => {
+router.put("/:id/approve", auth, async (req, res) => {
+  if(!req.user){
+    res.send('You are not authorized to access this page')
+  }
+
   AnimalModel.findOneAndUpdate(
     {_id: req.params.id},
     {pending: false},
@@ -94,7 +95,11 @@ router.put("/:id", multerUploads, async (req, res) => {
     .catch(err => res.status(500).send(err))
 })
 
-router.delete("/:id", (req, res) => {
+router.delete("/:id", auth, (req, res) => {
+  if(!req.user){
+    res.send('You are not authorized to access this page')
+  }
+
   AnimalModel.findOneAndDelete({_id: req.params.id})
     .then(() => res.sendStatus(200))
     .catch(err => res.status(500).send(err))

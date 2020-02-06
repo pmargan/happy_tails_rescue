@@ -2,8 +2,13 @@ const express = require("express")
 const router = express.Router()
 const { DynamicTextModel } = require('../database/schemas/dynamicText_schema')
 const mongoose = require('mongoose')
+const auth = require('../services/auth')
 
-router.put('/', async (req, res) => {
+router.put('/', auth, async (req, res) => {
+  if(!req.user){
+    res.send('You are not authorized to access this page')
+  }
+
   for(let key of Object.keys(req.body)) {
     await DynamicTextModel.updateOne({ id: key }, {$set: {value: req.body[key]}})
       .then(res => console.log(res))
@@ -11,7 +16,8 @@ router.put('/', async (req, res) => {
   }
 })
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', auth, async (req, res) => {
+  console.log(req.user)
     await DynamicTextModel.findOne({ id: req.params.id })
     .then(doc => res.send(doc))
     .catch(err => res.status(500).send(err))

@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 const { VetModel } = require('../database/schemas/vet_schema')
 const mongoose = require('mongoose')
+const auth = require('../services/auth')
 
 let { uploadFiles, uploadFile } = require('../services/uploader')
 let { multerUploads } = require('../middleware/multerUpload')
@@ -17,7 +18,11 @@ router.get('/', async (req, res) => {
   })
 })
 
-router.post('/', multerUploads, async (req, res) => {
+router.post('/', multerUploads, auth, async (req, res) => {
+  if(!req.user){
+    res.send('You are not authorized to access this page')
+  }
+
   await uploadFiles(req.files)
   .then(src => {
     req.body.src = src[0]
@@ -35,7 +40,11 @@ router.post('/', multerUploads, async (req, res) => {
   res.send(newVet)
 })
 
-router.put('/:id', multerUploads, async (req, res) => {
+router.put('/:id', multerUploads, auth, async (req, res) => {
+  if(!req.user){
+    res.send('You are not authorized to access this page')
+  }
+
   await uploadFiles(req.files)
   .then(src => {
     req.body.src = src[0]
@@ -54,7 +63,11 @@ router.put('/:id', multerUploads, async (req, res) => {
     .catch(err => res.status(500).send(err))
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
+  if(!req.user){
+    res.send('You are not authorized to access this page')
+  }
+
   VetModel.findOneAndDelete({_id: req.params.id})
     .then(() => res.sendStatus(200))
     .catch(err => res.status(500).send(err))
