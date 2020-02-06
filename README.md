@@ -89,3 +89,85 @@ Trello was further used to assign the documentation tasks to team members. We ch
 
 # Data Flow Diagram
 ![alt text](https://github.com/NicolasJJensen/happy_tails_rescue/blob/master/docs/Data%20Flow%20Diagram.png "Data Flow Diagram")
+
+# Deployed Website
+
+
+# GitHub Server
+https://github.com/NicolasJJensen/happy_tails_rescue
+
+# GitHub Client
+https://github.com/NicolasJJensen/happy_tails_rescue_client
+
+# User Logs
+
+Issue: Home was a unessessary page
+Solution: About Us has became the Home page
+
+Issue: Blue headers links are only available as clickable
+Solution: Made the blue, words and symbol clickable 
+
+Issue: Some adopt form input fields are too small
+Solution: Changed these fields from input to text box 
+
+Issue: Adopt form is long and cumbersome to go through
+Solution: Split form into manageable sections to allow for a more user friendly experience
+
+# Task Delagation
+
+## Renee
+### Strength
+* MongoDB 
+* Express
+* HTML
+* SCSS
+#### Weakness
+* React
+### Tasks
+Inital set up of server
+* Express routes for animals
+* Animal schema
+* Set up seeds with animals and text for dynamic text pages
+* Dynamic text schema
+* Animal controller
+Further set up of server
+* Adoption form schema
+* Routes for dynamic text pages
+* Refactor seeds for dynamic text pages
+* Refactor schema for dynamic text pages
+Client setup
+* Axios setup for text and animals
+* Display dynamic text of each page
+* Add an animal form and input/textarea/select
+* Add banner to welcome
+* Adoption for animal form and input/textarea/select
+* Single animal view text and layout
+* Add link buttons where needed
+* Link FaceBook and Instagram to footer
+* Create blue top button links
+Cypress Tesing
+* Adoption form
+* View animal
+* API
+* Header/footer links
+* Program links
+* Vet links
+
+## Pete
+### Strength
+* Logic
+* HTML
+* SCSS
+#### Weakness
+* React
+* Express
+
+## Nic
+### Strength
+* Logic
+* React
+* Programming Systems
+* Manipulating Data
+#### Weakness
+* Deployment
+* Express
