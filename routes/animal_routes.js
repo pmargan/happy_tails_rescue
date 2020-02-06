@@ -23,6 +23,12 @@ router.get("/approved", async (req, res) => {
     .catch(err => res.status(500).send(err))
 })
 
+router.get("/notApproved", async (req, res) => {
+  AnimalModel.find({pending: true})
+    .then(animal => res.send(animal))
+    .catch(err => res.status(500).send(err))
+})
+
 router.get("/cats", (req, res) => {
   AnimalModel.find({ $or: [{ animalType: "Kitten" }, { animalType: "Cat" }] })
     .then(animals => res.send(animals))
@@ -89,7 +95,7 @@ router.put("/:id", multerUploads, async (req, res) => {
 })
 
 router.delete("/:id", (req, res) => {
-  AnimalModel.findOneAndDelete({_id: req.params._id})
+  AnimalModel.findOneAndDelete({_id: req.params.id})
     .then(() => res.sendStatus(200))
     .catch(err => res.status(500).send(err))
 })
