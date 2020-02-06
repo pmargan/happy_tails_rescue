@@ -6,7 +6,13 @@ let { multerUploads } = require('../middleware/multerUpload')
 let { uploadFiles } = require('../services/uploader')
 
 router.get("/", async (req, res) => {
-  AnimalModel.find()
+
+  // find all animals if admin account
+  // AnimalModel.find()
+  //   .then(animal => res.send(animal))
+  //   .catch(err => res.status(500).send(err))
+
+  AnimalModel.find({pending: false})
     .then(animal => res.send(animal))
     .catch(err => res.status(500).send(err))
 })
@@ -41,12 +47,24 @@ router.post("/", multerUploads, async (req, res) => {
   }
   req.body = filter(req.body)
 
-  const newAnimal = new AnimalModel({...req.body})
+  const newAnimal = new AnimalModel({...req.body, adoptionFee: 10, pending: true})
   const {err} = await newAnimal.save()
+
+  console.log(newAnimal)
 
   if(err){res.status(400).send(err)}
 
   res.send(newAnimal)
+})
+
+router.put("/:id/approve", async (req, res) => {
+  AnimalModel.findOneAndUpdate(
+    {_id: req.params.id},
+    {pending: false},
+    {new: true}
+  )
+    .then((animal) => res.send(animal))
+    .catch(err => res.status(500).send(err))
 })
 
 router.put("/:id", multerUploads, async (req, res) => {
@@ -65,20 +83,23 @@ router.put("/:id", multerUploads, async (req, res) => {
 })
 
 router.delete("/:id", (req, res) => {
-  AnimalModel.findOneAndDelete({_id: req.params.id})
+  AnimalModel.findOneAndDelete({_id: req.params._id})
     .then(() => res.sendStatus(200))
     .catch(err => res.status(500).send(err))
 })
 
 router.post("/test", multerUploads, async (req, res) => {
-  console.log(req)
-  uploadFiles(req.files)
-  .then(images => res.send(images))
+  await uploadFiles(req.files)
+  .then(images => req.body.animalPhotos = images)
   .catch(err => res.status(500).send(err))
+
+  req.body = filter(req.body)
+  res.send(req.body)
 })
 
 const filter = (data) => {
   let keys = [
+    'required',
     'animalPhotos',
     'animalType',
     'gender',

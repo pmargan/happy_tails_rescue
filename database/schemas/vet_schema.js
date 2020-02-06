@@ -8,7 +8,7 @@ const VetSchema = new Schema({
       type: String,
       required: true
     },
-    image: {
+    src: {
       type: String,
       required: true
     },

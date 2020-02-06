@@ -4,6 +4,13 @@ const Schema = mongoose.Schema
 
 const AnimalSchema = new Schema({
 
+<<<<<<< HEAD
+=======
+  pending: {
+    type: Boolean,
+    required: true
+  },
+>>>>>>> 39a64735bca594317ba5c9bca6022b641678ac89
   animalPhotos: {
     type: Array,
     required: true

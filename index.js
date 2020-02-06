@@ -17,7 +17,11 @@ const db = mongoose.connection
 const animals = require("./routes/animal_routes")
 const auth = require("./routes/auth_routes")
 const text = require('./routes/otherRoutes')
+<<<<<<< HEAD
 const adoption = require('./routes/adoption_routes')
+=======
+const vets = require('./routes/vet_routes')
+>>>>>>> 39a64735bca594317ba5c9bca6022b641678ac89
 
 //------------------------------------------------//
 //----------REMOVE BEFORE PUTTING ONLINE----------//
@@ -42,9 +46,13 @@ app.use('*', cloudinaryConfig)
 
 //need to allocate proper routes 
 app.use('/text', text)
-app.use('/auth', auth) 
+app.use('/auth', auth)
 app.use('/animals', animals)
+<<<<<<< HEAD
 app.use('/adoption', adoption)
+=======
+app.use('/vets', vets)
+>>>>>>> 39a64735bca594317ba5c9bca6022b641678ac89
 
 app.on('close', () => {console.log('closing')})
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`))
