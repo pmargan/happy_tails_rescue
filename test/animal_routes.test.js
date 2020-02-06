@@ -127,7 +127,7 @@ describe('Animals', () => {
         .post('/animals')
         // .type('form')
         .send({
-          animalPhoto: "http://lorempixel.com/200/200",
+          animalPhotos: ["http://lorempixel.com/200/200"],
           animalType: "Dog",
           microchip: "abc123456789",
           name: "Budweiser",
