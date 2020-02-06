@@ -17,6 +17,12 @@ router.get("/", async (req, res) => {
     .catch(err => res.status(500).send(err))
 })
 
+router.get("/approved", async (req, res) => {
+  AnimalModel.find({pending: false})
+    .then(animal => res.send(animal))
+    .catch(err => res.status(500).send(err))
+})
+
 router.get("/cats", (req, res) => {
   AnimalModel.find({ $or: [{ animalType: "Kitten" }, { animalType: "Cat" }] })
     .then(animals => res.send(animals))

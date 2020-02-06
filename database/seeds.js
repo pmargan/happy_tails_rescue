@@ -1,9 +1,10 @@
 const { AnimalModel } = require('./schemas/animal_schema')
 const { DynamicTextModel } = require('./schemas/dynamicText_schema')
+const { VetModel } = require('./schemas/vet_schema')
 
 const animals = [
     {
-    animalPhoto: "http://lorempixel.com/200/200",
+    animalPhotos: ["http://lorempixel.com/200/200"],
     animalType: "Dog",
     microchip: "abc123456789",
     name: "Budweiser",
@@ -30,11 +31,12 @@ const animals = [
     heartwormTreated: true,
     dob: 21/1/2019,
     extraNotes: "",
-    description: "Budweiser, or Buddy as he is known always greets you with great excitement when you get home"
+    description: "Budweiser, or Buddy as he is known always greets you with great excitement when you get home",
+    pending: false
     },
 
     {
-    animalPhoto: "http://lorempixel.com/200/200",
+    animalPhotos: ["http://lorempixel.com/200/200"],
     animalType: "Cat",
     microchip: "abc987654321",
     name: "Abbey",
@@ -61,9 +63,12 @@ const animals = [
     heartwormTreated: true,
     dob: 21/1/2010,
     extraNotes: "",
-    description: "Brown spotted Bangel cat"
+    description: "Brown spotted Bangel cat",
+    pending: false
     }
 ]
+
+VetModel.deleteMany().catch(err => {})
 
 AnimalModel.deleteMany().catch(err => {})
 AnimalModel.create(animals)
