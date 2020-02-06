@@ -4,8 +4,12 @@ const Schema = mongoose.Schema
 
 const AnimalSchema = new Schema({
 
-  animalPhoto: {
-    type: String,
+  pending: {
+    type: Boolean,
+    required: true
+  },
+  animalPhotos: {
+    type: Array,
     required: true
   },
   animalType: {

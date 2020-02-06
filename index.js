@@ -16,6 +16,8 @@ mongoose.connect(dbRoute, { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
 const animals = require("./routes/animal_routes")
 const auth = require("./routes/auth_routes")
+const text = require('./routes/otherRoutes')
+const vets = require('./routes/vet_routes')
 
 //------------------------------------------------//
 //----------REMOVE BEFORE PUTTING ONLINE----------//
@@ -39,9 +41,10 @@ app.use(express.json())
 app.use('*', cloudinaryConfig)
 
 //need to allocate proper routes 
-app.use('/text', require('./routes/otherRoutes'))
-app.use('/auth', auth) 
+app.use('/text', text)
+app.use('/auth', auth)
 app.use('/animals', animals)
+app.use('/vets', vets)
 
 app.listen(API_PORT, () => console.log(`LISTENING ON PORT ${API_PORT}`))
 
