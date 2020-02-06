@@ -1,6 +1,17 @@
 const { AnimalModel } = require('./schemas/animal_schema')
 const { DynamicTextModel } = require('./schemas/dynamicText_schema')
 const { VetModel } = require('./schemas/vet_schema')
+const { UserModel } = require('./schemas/user_schema')
+const bcrypt = require('bcrypt')
+
+async function setAdmin() {
+    let user = await UserModel.create({email: 'admin@admin.com', password: 'Password1'})
+    const salt = await bcrypt.genSalt(10)
+    user.password = await bcrypt.hash(user.password, salt)
+    await user.save()
+}
+
+setAdmin()
 
 const animals = [
     {

@@ -45,7 +45,7 @@ The main target audience for this web application would be people wishing to ado
 # Tech stack
 * HTML/CSS for visual styling the user interface through style components/emotion
 * Heroku for hosting the server application
-* Netlify hosting for client side
+* Heroku for hosting the client application
 * NodeJS as Javascript runtime environment
 * ExpressJS open source framework for creating the server application on NodeJS
 * ReactJS framework for creating the client side application that handles page routing, page rendering, searching
@@ -88,16 +88,16 @@ Trello was further used to assign the documentation tasks to team members. We ch
 ![timeline overview](./docs/timeline-overview.png)
 
 # Data Flow Diagram
-![alt text](https://github.com/NicolasJJensen/happy_tails_rescue/blob/master/docs/Data%20Flow%20Diagram.png "Data Flow Diagram")
+![alt text](https://github.com/pmargan/happy_tails_rescue/blob/master/docs/Data%20Flow%20Diagram.png "Data Flow Diagram")
 
 # Deployed Website
 
 
 # GitHub Server
-https://github.com/NicolasJJensen/happy_tails_rescue
+https://github.com/pmargan/happy_tails_rescue
 
 # GitHub Client
-https://github.com/NicolasJJensen/happy_tails_rescue_client
+https://github.com/pmargan/happy_tails_rescue_client
 
 # Client and User Logs
 
@@ -187,9 +187,28 @@ Cypress Tesing
 * Logic
 * HTML
 * SCSS
+* Deployment
 #### Weakness
 * React
 * Express
+
+### Tasks
+**Backend**
+* Create deploy initial backend server app on heroku
+* Meet with client take notes of meeting
+* Testing, Write  all serverside unit tests (adoption_routes, animal_routes, other_routes animal controller)
+* Refactor Schemas where required to get desired test results
+* Refactor API Routes where required to get desired test results
+* Deploy Frontend server app on heroku
+* Test functionallity of site.
+
+**Frontend**
+* Create Our Vets page 
+* Aquire pictures /resources for vet page
+* Add external links for all the various vet websites
+* Style and format the vet page.
+
+
 
 ## Nic
 ### Strength
