@@ -6,7 +6,7 @@ const { UserModel } = require('./schemas/user_schema')
 const bcrypt = require('bcrypt')
 async function addAdmin() {
     try{
-        let user = await UserModel.create({email: 'admin@admin.com', password: 'Password1'})
+        let user = await UserModel.create({email: 'admin@test.com', password: 'Password1'})
         const salt = await bcrypt.genSalt(10)
         user.password = await bcrypt.hash(user.password, salt)
         await user.save()
