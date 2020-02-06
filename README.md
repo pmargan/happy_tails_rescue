@@ -99,7 +99,7 @@ https://github.com/NicolasJJensen/happy_tails_rescue
 # GitHub Client
 https://github.com/NicolasJJensen/happy_tails_rescue_client
 
-# User Logs
+# Client and User Logs
 
 Issue: Home was a unessessary page
 Solution: About Us has became the Home page
@@ -112,6 +112,32 @@ Solution: Changed these fields from input to text box
 
 Issue: Adopt form is long and cumbersome to go through
 Solution: Split form into manageable sections to allow for a more user friendly experience
+
+Issue: Programs had short over view then the main description further down the page, was difficult to navigate
+Solution: Moved overview and description together
+
+Issue: Email addresses were overflowing the screen size on mobile
+Solution: Mobile font is smaller to fit email addresses in the screen size
+
+Issue: Symbols for social links were too small on mobile
+Solution: Made symbols larger to allow for ease on a mobile device
+
+Issue: Footer text should stack in mobile view
+Solution: Stacked text in mobile view
+
+Issue: Chosen color for buttons was too dark (#B48FB8)
+Solution: Chose a lighter color for ease of viewing (#CBB0CE)
+
+Issue: Single animal view format difficult to read in tablet and mobile view
+Solution: Stack sections in a centred column for mobile and tablet view
+
+Carousel mobile/desktop
+Issue: Photo scroller too large for mobile view
+Solution: Scale photo scroller by 50% for mobile,
+Issue: Carousel loads as odd sizes
+Solution: Set min width for img,
+Issue: Previous solution breaks mobile carousel
+Solution: Set different mins for mobile 
 
 # Task Delagation
 
@@ -130,11 +156,13 @@ Inital set up of server
 * Set up seeds with animals and text for dynamic text pages
 * Dynamic text schema
 * Animal controller
+
 Further set up of server
 * Adoption form schema
 * Routes for dynamic text pages
 * Refactor seeds for dynamic text pages
 * Refactor schema for dynamic text pages
+
 Client setup
 * Axios setup for text and animals
 * Display dynamic text of each page
@@ -145,6 +173,7 @@ Client setup
 * Add link buttons where needed
 * Link FaceBook and Instagram to footer
 * Create blue top button links
+
 Cypress Tesing
 * Adoption form
 * View animal
