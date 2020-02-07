@@ -32,6 +32,8 @@ router.post('/', multerUploads, auth, async (req, res) => {
 
   req.body = filter(req.body)
 
+  console.log(req.body)
+
   const newVet = new VetModel({...req.body})
   const {err} = await newVet.save()
 
